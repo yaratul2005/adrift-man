@@ -2,21 +2,29 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
 import Image from 'next/image';
 
+// ocean-bg.jpg = USCG seaplane (B&W) landing on water — cinematic military
+// military-ph.jpg = USCG HU-16 aircraft in flight (color) — Coast Guard years
+// family-ph.jpg = Andrew in officer's cap (modern portrait, side view) — Author today
+// life-journey-ph.jpg = Physical book cover photo (painting of rescue at sea)
+// author.jpg = Andrew young, full officer uniform portrait — USCG service
 const photos = [
   {
-    src: 'https://images.unsplash.com/photo-1471922694854-ff1b63b20054?auto=format&fit=crop&q=80&w=800', // Ocean Coast
-    alt: 'Coast Guard Service Days',
-    category: 'Military',
+    src: '/images/ocean-bg.jpg',
+    alt: 'U.S. Coast Guard seaplane landing on water — from Andrew\'s service era',
+    category: 'Coast Guard Service',
+    caption: 'The waters of duty',
   },
   {
-    src: '/images/family-ph.jpg', // Keep local for family placeholder to maintain respect/privacy in demo
-    alt: 'Family moments',
-    category: 'Family',
+    src: '/images/military-ph.jpg',
+    alt: 'U.S. Coast Guard HU-16 aircraft in flight',
+    category: 'Military Aviation',
+    caption: 'Above sea and sky',
   },
   {
-    src: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&q=80&w=800', // Calm sea / Journey
-    alt: 'Life journey reflection',
-    category: 'Life Journey',
+    src: '/images/author.jpg',
+    alt: 'Andrew J. Key Jr. — Official U.S. Coast Guard portrait',
+    category: 'The Author',
+    caption: 'Lieutenant-Commander Key',
   },
 ];
 
@@ -47,10 +55,15 @@ export function PhotoStripSection() {
               />
 
               {/* Caption Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 md:p-8">
-                <span className="font-sans text-sm md:text-base tracking-widest uppercase text-site-text/90 font-medium">
-                  {photo.category}
-                </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-6 md:p-8">
+                <div>
+                  <span className="block font-sans text-[10px] tracking-[0.25em] uppercase text-site-accent/80 font-medium mb-1">
+                    {photo.category}
+                  </span>
+                  <span className="block font-serif text-sm md:text-base text-site-text/90 italic">
+                    {photo.caption}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

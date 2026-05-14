@@ -8,12 +8,11 @@ export default function AuthorPage() {
       <div className="mx-auto max-w-4xl">
         <FadeUp>
           <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 shadow-[0_0_50px_rgba(226,194,117,0.1)] border border-white/10">
-            {/* Using a placeholder for the hero author image, client can swap with a real wide image */}
             <Image
-              src="/images/authornow.jpg"
-              alt="Andrew J. Key Jr."
+              src="/images/author.jpg"
+              alt="Andrew J. Key Jr. — U.S. Coast Guard Official Portrait"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/40 to-transparent" />
@@ -60,14 +59,33 @@ export default function AuthorPage() {
 
           {/* Image Break */}
           <FadeUp delay={0.2}>
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(226,194,117,0.05)] border border-white/5">
-              <Image
-                src="/images/family-ph.jpg"
-                alt="Family"
-                fill
-                className="object-cover saturate-50 mix-blend-luminosity opacity-80"
-              />
-            </div>
+            {/* Two aircraft images as cinematic visual breaks */}
+          <div className="grid grid-cols-2 gap-4">
+            <FadeUp delay={0.1}>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/5 shadow-[0_0_30px_rgba(0,0,0,0.5)] group">
+                <Image
+                  src="/images/ocean-bg.jpg"
+                  alt="U.S. Coast Guard seaplane No. 1285 — water landing, c. 1950s"
+                  fill
+                  className="object-cover saturate-0 group-hover:saturate-50 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <p className="absolute bottom-3 left-4 font-sans text-[10px] tracking-[0.25em] uppercase text-site-accent/70">USCG Seaplane · c. 1950s</p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/5 shadow-[0_0_30px_rgba(0,0,0,0.5)] group">
+                <Image
+                  src="/images/military-ph.jpg"
+                  alt="U.S. Coast Guard HU-16 Albatross No. 7250 in flight"
+                  fill
+                  className="object-cover saturate-50 group-hover:saturate-100 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <p className="absolute bottom-3 left-4 font-sans text-[10px] tracking-[0.25em] uppercase text-site-accent/70">HU-16 Albatross No. 7250</p>
+              </div>
+            </FadeUp>
+          </div>
           </FadeUp>
 
           <FadeUp delay={0.2}>

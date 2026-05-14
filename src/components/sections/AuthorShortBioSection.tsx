@@ -14,10 +14,10 @@ export function AuthorShortBioSection() {
             <FadeUp delay={0.2}>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(226,194,117,0.15)] border border-site-accent/20 ring-4 ring-white/5 group">
                 <Image
-                  src="/images/author.jpg" // We'll pull from assets
-                  alt="Andrew J. Key Jr."
+                  src="/images/author.jpg"
+                  alt="Andrew J. Key Jr. — U.S. Coast Guard Officer Portrait"
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="object-cover object-top transition-transform duration-1000 group-hover:scale-110"
                   sizes="(max-width: 768px) 256px, 320px"
                 />
               </div>
