@@ -22,7 +22,7 @@ export function BookShowcaseSection() {
             <FadeUp delay={0.2} className="w-full max-w-[320px] lg:max-w-[400px]">
               <div className="relative aspect-[2/3] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-md overflow-hidden group border border-white/10">
                 <Image
-                  src="/images/book-cover.jpg"
+                  src="/images/book-front.jpeg"
                   alt="Adrift Book Cover"
                   fill
                   className="object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-1"
