@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FadeUp } from '@/components/ui/FadeUp';
 import { Button } from '@/components/ui/Button';
 import { OceanMistParticles } from '@/components/ui/OceanMistParticles';
@@ -63,11 +64,15 @@ export function HeroSection() {
 
         <FadeUp delay={1.1}>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-5 sm:space-y-0 sm:space-x-8">
-            <Button size="lg" className="w-full sm:w-auto px-10">
-              <span className="mr-2 text-lg leading-none">&#9654;</span> Watch Trailer
+            <Button asChild size="lg" className="w-full sm:w-auto px-10">
+              <a href="#trailer">
+                <span className="mr-2 text-lg leading-none">&#9654;</span> Watch Trailer
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto px-10">
-              Learn More
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto px-10">
+              <Link href="/author">
+                Learn More
+              </Link>
             </Button>
           </div>
         </FadeUp>
