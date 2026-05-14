@@ -24,10 +24,10 @@ export function GlobalFooter() {
           {/* Brand */}
           <div>
             <h2 className="font-serif text-2xl tracking-[0.2em] text-gradient mb-2">ADRIFT</h2>
-            <p className="font-sans text-sm text-site-secondary/60 italic leading-relaxed mb-1">
+            <p className="font-sans text-sm text-white/70 italic leading-relaxed mb-1">
               How God&apos;s Agents Helped Me Transform My Life
             </p>
-            <p className="font-sans text-xs text-site-secondary/40">
+            <p className="font-sans text-xs text-white/50">
               by Andrew J. Key Jr.
             </p>
           </div>
@@ -42,7 +42,7 @@ export function GlobalFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-sans text-sm text-site-secondary/60 hover:text-site-accent transition-colors duration-300 w-fit"
+                  className="font-sans text-sm text-white/65 hover:text-site-accent transition-colors duration-300 w-fit"
                 >
                   {link.label}
                 </Link>
@@ -72,7 +72,7 @@ export function GlobalFooter() {
                     sizes="64px"
                   />
                 </div>
-                <span className="font-sans text-xs text-site-secondary/60 group-hover:text-site-accent/80 transition-colors duration-300">
+                <span className="font-sans text-xs text-white/60 group-hover:text-site-accent/80 transition-colors duration-300">
                   amazon.com →
                 </span>
               </a>
@@ -106,10 +106,10 @@ export function GlobalFooter() {
       {/* Bottom bar */}
       <div className="border-t border-white/[0.04] py-5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-sans text-xs text-site-secondary/30">
+          <p className="font-sans text-xs text-white/40">
             &copy; {currentYear} Andrew J. Key Jr. All rights reserved.
           </p>
-          <p className="font-sans text-xs text-site-secondary/20 italic">
+          <p className="font-sans text-xs text-white/25 italic">
             &ldquo;Are you still counting?&rdquo;
           </p>
         </div>

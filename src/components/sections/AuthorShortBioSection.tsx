@@ -26,13 +26,13 @@ export function AuthorShortBioSection() {
 
           <div className="w-full md:w-7/12 text-center md:text-left flex flex-col justify-center">
             <FadeUp delay={0.4}>
-              <p className="font-serif text-2xl md:text-3xl text-site-text leading-relaxed mb-8">
+              <p className="font-serif text-2xl md:text-3xl text-white leading-relaxed mb-8">
                 Andrew J. Key Jr. is a retired Coast Guard Lieutenant Commander whose life journey spans hardship, service, and transformation through faith.
               </p>
             </FadeUp>
             
             <FadeUp delay={0.6}>
-              <Button asChild variant="outline" className="text-site-text border-site-secondary hover:bg-site-secondary/20 hover:text-site-text hover:border-site-text">
+              <Button asChild variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-site-accent hover:border-site-accent/50">
                 <Link href="/author">
                   Read Full Story &rarr;
                 </Link>

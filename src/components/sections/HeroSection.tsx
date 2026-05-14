@@ -57,7 +57,7 @@ export function HeroSection() {
         </FadeUp>
 
         <FadeUp delay={0.7}>
-          <p className="font-sans text-lg md:text-2xl text-site-secondary/90 mb-12 max-w-3xl mx-auto tracking-wide font-light drop-shadow-md">
+          <p className="font-sans text-lg md:text-2xl text-white/85 mb-12 max-w-3xl mx-auto tracking-wide font-light drop-shadow-md">
             A true story of survival, faith, and the unseen forces that changed everything.
           </p>
         </FadeUp>

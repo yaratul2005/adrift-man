@@ -90,7 +90,7 @@ export function GlobalNavigation() {
                 <span className="font-serif text-xl tracking-[0.25em] text-site-text group-hover:text-gradient transition-all duration-300">
                   ADRIFT
                 </span>
-                <span className="font-sans text-[9px] tracking-[0.3em] text-site-accent/60 uppercase group-hover:text-site-accent/90 transition-colors duration-300">
+                <span className="font-sans text-[9px] tracking-[0.3em] text-site-accent/80 uppercase group-hover:text-site-accent transition-colors duration-300">
                   Andrew J. Key Jr.
                 </span>
               </div>
@@ -125,7 +125,7 @@ export function GlobalNavigation() {
                       ? 'text-site-accent'
                       : activeIndex === index
                         ? 'text-site-text'
-                        : 'text-site-text/50 hover:text-site-text/80'
+                        : 'text-site-text/75 hover:text-site-text'
                   )}>
                     {link.label}
                   </span>

@@ -19,7 +19,7 @@ export function FinalCallToActionSection() {
       <div className="relative z-10 mx-auto max-w-4xl text-center">
 
         <FadeUp delay={0.1}>
-          <p className="font-sans text-xs tracking-[0.4em] text-site-accent/50 uppercase mb-6">
+          <p className="font-sans text-xs tracking-[0.4em] text-site-accent/80 uppercase mb-6">
             Begin the journey
           </p>
         </FadeUp>
@@ -31,7 +31,7 @@ export function FinalCallToActionSection() {
         </FadeUp>
 
         <FadeUp delay={0.35}>
-          <p className="font-sans text-lg text-site-secondary/60 font-light max-w-xl mx-auto mb-12">
+          <p className="font-sans text-lg text-white/70 font-light max-w-xl mx-auto mb-12">
             Available now in paperback and digital editions from your preferred bookseller.
           </p>
         </FadeUp>
@@ -60,7 +60,7 @@ export function FinalCallToActionSection() {
 
         {/* Secondary ghost CTA */}
         <FadeUp delay={0.6}>
-          <Button asChild variant="ghost" size="sm" className="text-site-secondary/40 hover:text-site-accent hover:bg-site-accent/5 text-sm">
+          <Button asChild variant="ghost" size="sm" className="text-white/50 hover:text-site-accent hover:bg-site-accent/5 text-sm">
             <a href="#trailer">
               Watch the trailer first ↓
             </a>
@@ -71,7 +71,7 @@ export function FinalCallToActionSection() {
         <FadeUp delay={0.8}>
           <div className="mt-20 md:mt-28 flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-site-accent/30" />
-            <p className="font-serif text-lg md:text-xl text-site-secondary/50 italic tracking-widest">
+            <p className="font-serif text-lg md:text-xl text-white/60 italic tracking-widest">
               Are you still counting?
             </p>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-site-accent/30" />

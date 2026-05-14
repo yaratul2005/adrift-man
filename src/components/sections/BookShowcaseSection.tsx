@@ -39,7 +39,7 @@ export function BookShowcaseSection() {
           {/* Book Info + CTAs */}
           <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
             <FadeUp delay={0.3}>
-              <p className="font-sans text-xs tracking-[0.35em] text-site-accent/60 uppercase mb-3">
+              <p className="font-sans text-xs tracking-[0.35em] text-site-accent/90 uppercase mb-3">
                 Now Available
               </p>
             </FadeUp>
@@ -54,7 +54,7 @@ export function BookShowcaseSection() {
             </FadeUp>
             
             <FadeUp delay={0.5}>
-              <p className="font-sans text-lg text-site-text/75 leading-relaxed mb-10 tracking-wide font-light max-w-lg mx-auto md:mx-0">
+              <p className="font-sans text-lg text-white/80 leading-relaxed mb-10 tracking-wide font-light max-w-lg mx-auto md:mx-0">
                 A deeply personal memoir of transformation — revealing how moments of crisis, chance encounters, and unseen guidance shaped one man&apos;s life against all odds.
               </p>
             </FadeUp>
@@ -62,7 +62,7 @@ export function BookShowcaseSection() {
             {/* Retailer Store Buttons with Logos */}
             <FadeUp delay={0.6}>
               <div className="mb-3">
-                <p className="font-sans text-[10px] tracking-[0.3em] text-site-secondary/40 uppercase mb-4 text-center md:text-left">
+                <p className="font-sans text-[10px] tracking-[0.3em] text-site-text/70 uppercase mb-4 text-center md:text-left">
                   Available at
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -87,7 +87,7 @@ export function BookShowcaseSection() {
             {/* Secondary text link */}
             <FadeUp delay={0.7}>
               <div className="flex justify-center md:justify-start">
-                <Button asChild variant="link" size="sm" className="text-site-secondary/50 hover:text-site-accent text-sm px-0">
+                <Button asChild variant="link" size="sm" className="text-site-text/60 hover:text-site-accent text-sm px-0">
                   <Link href="/author">
                     Learn about the author →
                   </Link>
