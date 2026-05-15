@@ -8,6 +8,12 @@ import { X, ZoomIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // All available local assets, correctly mapped to their actual content
+// author.jpg        = Andrew young, official USCG uniform portrait (1970s)
+// authornow.jpg     = Andrew recent, officer's cap side-profile portrait
+// family-ph.jpg     = Andrew recent, officer's cap (front-facing, slightly different)
+// military-ph.jpg   = USCG HU-16 Albatross aircraft in flight (color)
+// ocean-bg.jpg      = USCG seaplane No.1285 landing on water (B&W)
+// life-journey-ph.jpg = Book cover painting (rescue at sea, by D.A. Wingert)
 const galleryItems = [
   {
     src: '/images/author.jpg',
@@ -15,7 +21,7 @@ const galleryItems = [
     title: 'Lieutenant-Commander Key',
     year: 'c. 1970s',
     category: 'Service Portrait',
-    span: 'col-span-1 row-span-2', // Tall portrait — use full height
+    span: 'col-span-1 row-span-2', // Tall portrait — spans full height
   },
   {
     src: '/images/military-ph.jpg',
@@ -35,23 +41,24 @@ const galleryItems = [
   },
   {
     src: '/images/family-ph.jpg',
-    alt: 'Andrew J. Key Jr. in officer\'s cap — later years',
+    alt: 'Andrew J. Key Jr. in officer\'s cap — recent years',
     title: 'Andrew J. Key Jr.',
     year: 'Recent',
     category: 'The Author Today',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/images/book-front.jpeg',
-    alt: 'Adrift book cover — How God\'s Agents Helped Me Transform My Life',
-    title: 'Adrift — The Book',
-    year: '2024',
-    category: 'Publication',
+    // authornow.jpg is a distinct side-profile portrait, different from family-ph.jpg
+    src: '/images/authornow.jpg',
+    alt: 'Andrew J. Key Jr. — reflective side portrait in officer\'s cap',
+    title: 'Andrew — A Life of Service',
+    year: 'Recent',
+    category: 'The Author',
     span: 'col-span-1 row-span-1',
   },
   {
     src: '/images/life-journey-ph.jpg',
-    alt: 'Adrift book cover painting — rescue at sea, by D.A. Wingert',
+    alt: 'Adrift — cover artwork painting of rescue at sea, by D.A. Wingert',
     title: 'Cover Art by D.A. Wingert',
     year: '2024',
     category: 'Cover Artwork',

@@ -7,6 +7,28 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const INSTAGRAM_URL = 'https://www.instagram.com/andrew.key.10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==';
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61556330845904';
+
+// Crisp inline SVG icons — no dependency needed
+function InstagramIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 const navLinks = [
   { href: '/#story', label: 'The Story', desc: 'A life transformed' },
   { href: '/author', label: 'About Andrew', desc: 'Meet the author' },
@@ -141,15 +163,53 @@ export function GlobalNavigation() {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:flex items-center gap-4">
+            {/* Desktop right-side: Social icons + CTA */}
+            <div className="hidden md:flex items-center gap-3">
+
+              {/* Instagram */}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Andrew on Instagram"
+                className="group relative flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/[0.08] hover:border-pink-400/40 hover:bg-pink-500/10 transition-all duration-300"
+              >
+                <span className="text-white/50 group-hover:text-pink-400 transition-colors duration-300">
+                  <InstagramIcon size={16} />
+                </span>
+                {/* Tooltip */}
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-wide text-white/60 bg-site-surface border border-white/10 px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                  Instagram
+                </span>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Andrew on Facebook"
+                className="group relative flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/[0.08] hover:border-blue-400/40 hover:bg-blue-500/10 transition-all duration-300"
+              >
+                <span className="text-white/50 group-hover:text-blue-400 transition-colors duration-300">
+                  <FacebookIcon size={16} />
+                </span>
+                {/* Tooltip */}
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-wide text-white/60 bg-site-surface border border-white/10 px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                  Facebook
+                </span>
+              </a>
+
+              {/* Vertical divider */}
+              <div className="w-px h-5 bg-white/10" />
+
+              {/* Get the Book CTA */}
               <a
                 href="https://www.amazon.com/Adrift-Gods-Agents-Helped-Transform/dp/B0CWPV45NW"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-sans font-semibold tracking-wide overflow-hidden transition-all duration-300"
               >
-                {/* Button background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-site-accent to-site-accent-dark rounded-full" />
                 <div className="absolute inset-0 bg-gradient-to-r from-site-accent to-site-accent-dark rounded-full opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
                 <span className="relative text-[#0a0e14] font-bold">Get the Book</span>
@@ -236,7 +296,39 @@ export function GlobalNavigation() {
               </nav>
 
               <div className="mt-auto">
-                <div className="h-px bg-gradient-to-r from-site-accent/20 to-transparent mb-8" />
+                <div className="h-px bg-gradient-to-r from-site-accent/20 to-transparent mb-6" />
+
+                {/* Social links row */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-white/30 flex-shrink-0">Follow</span>
+                  <div className="flex gap-3">
+                    <a
+                      href={INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="group flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.07] hover:border-pink-400/30 hover:bg-pink-500/10 transition-all duration-300"
+                    >
+                      <span className="text-white/40 group-hover:text-pink-400 transition-colors duration-300">
+                        <InstagramIcon size={15} />
+                      </span>
+                      <span className="font-sans text-xs text-white/50 group-hover:text-pink-400 transition-colors duration-300">Instagram</span>
+                    </a>
+                    <a
+                      href={FACEBOOK_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="group flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/[0.07] hover:border-blue-400/30 hover:bg-blue-500/10 transition-all duration-300"
+                    >
+                      <span className="text-white/40 group-hover:text-blue-400 transition-colors duration-300">
+                        <FacebookIcon size={15} />
+                      </span>
+                      <span className="font-sans text-xs text-white/50 group-hover:text-blue-400 transition-colors duration-300">Facebook</span>
+                    </a>
+                  </div>
+                </div>
+
                 <a
                   href="https://www.amazon.com/Adrift-Gods-Agents-Helped-Transform/dp/B0CWPV45NW"
                   target="_blank"
