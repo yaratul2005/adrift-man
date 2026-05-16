@@ -13,9 +13,8 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  // Placeholder YouTube URL that client can swap
-  videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 
-  thumbnailUrl = '/images/authornow.jpg', // We'll use one of the assets for now
+  videoUrl = '/video/trailer/01 - att.Q8tOwPBKRoJNYnWX9RRdG3mKMmPTfTGQpk_CzQdjB5s.MP4', 
+  thumbnailUrl = '/images/ocean-bg.jpg', 
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -48,10 +47,12 @@ export function MainTrailerSection({
               />
               
               {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors duration-500">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent mb-6">
                   <Play size={36} className="ml-2" fill="currentColor" />
                 </div>
+                <h3 className="font-serif text-4xl text-white tracking-widest drop-shadow-md mb-2">TRAILER</h3>
+                <p className="font-sans text-sm text-white/80 uppercase tracking-[0.2em] drop-shadow">Click to watch</p>
               </div>
             </div>
           ) : (
