@@ -47,7 +47,7 @@ const galleryItems = [
   {
     src: '/album/02.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 1',
+    title: ' Leona M. Key holding Jeffery Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
@@ -55,15 +55,15 @@ const galleryItems = [
   {
     src: '/album/03.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 2',
+    title: 'Music and memory',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
   },
   {
     src: '/album/1714491009852.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 3',
+    alt: 'Andrew Jackson Key, Sr.',
+    title: 'Andrew Jackson Key, Sr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -71,7 +71,7 @@ const galleryItems = [
   {
     src: '/album/1714491013120.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 4',
+    title: 'Andrew Jackson Key, Jr., Violet Eloise Smith Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -79,7 +79,7 @@ const galleryItems = [
   {
     src: '/album/1714491028475_edited.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 5',
+    title: 'PAST moments',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-2',
@@ -87,23 +87,15 @@ const galleryItems = [
   {
     src: '/album/1714491031459.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 6',
+    title: 'Jeffery Allen Key age 1 year old',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
   },
   {
-    src: '/album/1714491034680.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 7',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-2 row-span-1',
-  },
-  {
     src: '/album/1714491048334.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 8',
+    title: ' Seaman Andrew J. Key III, USN',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -119,7 +111,7 @@ const galleryItems = [
   {
     src: '/album/1714491057460.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 10',
+    title: 'L-R, Leona Marie Key, Rosalee and Steve McClure, and Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -127,7 +119,7 @@ const galleryItems = [
   {
     src: '/album/1714491060570.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 11',
+    title: 'From Left to Right: Linda Saiz Key and Andrew J. Key III on their wedding day.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
@@ -143,7 +135,7 @@ const galleryItems = [
   {
     src: '/album/1714491070030.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 13',
+    title: 'Couple on the right, from left to right: Beatrice Lavonne Bales Key, Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -151,7 +143,7 @@ const galleryItems = [
   {
     src: '/album/1714491074358.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 14',
+    title: 'From left to right: Violet E. Key, Leona M. Key, Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -159,7 +151,7 @@ const galleryItems = [
   {
     src: '/album/A-14.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 15',
+    title: 'Debra D. Key and Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -167,7 +159,7 @@ const galleryItems = [
   {
     src: '/album/A-17.png',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 16',
+    title: 'Andrew J. Key III, Beatrice L. Bales Key,Debra D. Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
@@ -183,7 +175,7 @@ const galleryItems = [
   {
     src: '/album/A-22.png',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 18',
+    title: 'Members of the Marcus Island Japanese weathermen and Coast Guard softball teams. Andrew Key, Jr. standing on the extreme right.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -191,23 +183,15 @@ const galleryItems = [
   {
     src: '/album/A-23.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 19',
+    title: 'CWO-3 Andrew J. Key, Jr. attending OCS',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
   },
   {
-    src: '/album/A-27.remini-enhanced.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 20',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-1 row-span-1',
-  },
-  {
     src: '/album/A-29.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 21',
+    title: 'L-R, Leona Marie Key, Rosalee and Steve McClure, and Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
@@ -231,7 +215,7 @@ const galleryItems = [
   {
     src: '/album/A-4.png',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 24',
+    title: 'Gerald Avenue Elementary 2nd grade, First Row,2nd from right - Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -239,7 +223,7 @@ const galleryItems = [
   {
     src: '/album/A-5.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 25',
+    title: 'Left to right – Virginia Lee Key, Johnny Louis Key, Andrew J. Key, Jr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -247,7 +231,7 @@ const galleryItems = [
   {
     src: '/album/A-6.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 26',
+    title: 'Andrew J. Key, Jr – Age 12',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
@@ -255,7 +239,7 @@ const galleryItems = [
   {
     src: '/album/A-7.png',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 27',
+    title: 'Back row, 3rd from left- Andrew J. Key, Sr.,4th from left – Andrew F. Key, Front row, 1st from left – Orville Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -263,7 +247,7 @@ const galleryItems = [
   {
     src: '/album/A-8.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 28',
+    title: 'Andrew J. Key, Jr. – Erect Holding M-1 rifle, Mi- chael Blakeny Kneeling',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -279,7 +263,7 @@ const galleryItems = [
   {
     src: '/album/A15.remini-enhanced.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 30',
+    title: ' Beatrice Lavonne Bales holding Andrew J. Key, III with Debra Diane Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-1',
@@ -383,7 +367,7 @@ const galleryItems = [
   {
     src: '/album/circa 1965.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 43',
+    title: 'Form left to right: Debra D Key, Andrew J.Key, Jr., and Andrew J. Key III',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -495,7 +479,7 @@ const galleryItems = [
   {
     src: '/album/IMAG0015-Mom, Dad, Marie, Rosalee, Jeff and Klint.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 57',
+    title: 'From left to right: Rosalee Johnson, Leona Marie Key, Andrew J. Key, Sr., Klint Fritz, Jeffery A. Key, and Violet E. Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-1 row-span-2',
@@ -541,14 +525,6 @@ const galleryItems = [
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/album/Larry and Lissa Key in their wedding day.JPG',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 63',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-1 row-span-1',
-  },
-  {
     src: '/album/Larry and Lissa Key in their wedding day_edited.jpg',
     alt: 'Author archive photograph',
     title: 'Archive Journey 64',
@@ -557,28 +533,12 @@ const galleryItems = [
     span: 'col-span-2 row-span-1',
   },
   {
-    src: '/album/LCDR A. Key.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 65',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-1 row-span-2',
-  },
-  {
     src: '/album/Marie and Me circa 2000_edited.jpg',
     alt: 'Author archive photograph',
     title: 'Archive Journey 66',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
-  },
-  {
-    src: '/album/Marie asnd Jeff Falls Church_inPixio.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 67',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-2 row-span-1',
   },
   {
     src: '/album/Marilyn and Lolly carter.png',
@@ -599,18 +559,10 @@ const galleryItems = [
   {
     src: '/album/Mom and Dad circa 1937_edited.jpg',
     alt: 'Author archive photograph',
-    title: 'Archive Journey 70',
+    title: 'From left to right: Violet Eloise Smith Key Andrew Jackson Key, Sr.',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
-  },
-  {
-    src: '/album/P5M02- Beth Crumley.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 71',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-2 row-span-2',
   },
   {
     src: '/album/Painting-P5M 7x4.9 300dpi.jpg',
