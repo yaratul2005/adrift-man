@@ -13,7 +13,7 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  videoUrl = '/video/trailer/01 - att.Q8tOwPBKRoJNYnWX9RRdG3mKMmPTfTGQpk_CzQdjB5s.MP4', 
+  videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview', 
   thumbnailUrl = '/images/ocean-bg.jpg', 
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -56,17 +56,18 @@ export function MainTrailerSection({
               </div>
             </div>
           ) : (
-            <div className="absolute inset-0">
-              <ReactPlayer
-                url={videoUrl}
+            <div className="absolute inset-0 w-full h-full">
+              <iframe
+                src={videoUrl}
                 width="100%"
                 height="100%"
-                playing={true}
-                controls={true}
-                config={{
-                  youtube: {}
-                }}
-              />
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                referrerPolicy="no-referrer"
+                className="w-full h-full border-0 absolute top-0 left-0"
+                style={{ border: 'none' }}
+                title="Main Trailer"
+              ></iframe>
             </div>
           )}
         </div>
