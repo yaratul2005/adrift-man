@@ -165,14 +165,6 @@ const galleryItems = [
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/album/A-20.remini-enhanced.jpg',
-    alt: 'Author archive photograph',
-    title: 'Archive Journey 17',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-2 row-span-2',
-  },
-  {
     src: '/album/A-22.png',
     alt: 'Author archive photograph',
     title: 'Members of the Marcus Island Japanese weathermen and Coast Guard softball teams. Andrew Key, Jr. standing on the extreme right.',
