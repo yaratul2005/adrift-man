@@ -670,11 +670,21 @@ export default function GalleryPage() {
                 onClick={() => setLightboxImg(item)}
                 className="relative w-full h-full group overflow-hidden rounded-xl border border-white/[0.06] bg-site-surface cursor-zoom-in focus:outline-none"
               >
+                {/* Premium Blurred Background */}
+                <Image
+                  src={item.src}
+                  alt=""
+                  fill
+                  className="object-cover opacity-30 blur-2xl transition-all duration-700 group-hover:opacity-50 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+
+                {/* Main Uncropped Image */}
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-cover transition-all duration-700 group-hover:scale-110 saturate-75 group-hover:saturate-100"
+                  className="object-contain transition-all duration-700 group-hover:scale-[1.03] saturate-75 group-hover:saturate-100 p-2 sm:p-4 drop-shadow-2xl"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
 
