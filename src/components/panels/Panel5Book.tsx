@@ -21,6 +21,7 @@ export function Panel5Book({ isActive, speedRatio = 0.3 }: { isActive: boolean, 
             src="/images/book-front.jpeg"
             alt="Adrift Book Cover"
             fill
+            sizes="(max-width: 768px) 192px, 320px"
             className="object-cover"
           />
         </div>

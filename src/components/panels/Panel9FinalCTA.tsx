@@ -39,6 +39,7 @@ export function Panel9FinalCTA({ isActive, speedRatio = 0.3 }: { isActive: boole
           src="/images/ocean-bg.jpg"
           alt="Dark ocean"
           fill
+          sizes="100vw"
           className="object-cover opacity-30"
           style={{ objectPosition: 'center' }}
         />

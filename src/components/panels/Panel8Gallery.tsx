@@ -47,6 +47,7 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
                 src={src}
                 alt={`Gallery Teaser ${idx + 1}`}
                 fill
+                sizes="(max-width: 768px) 40vw, 25vw"
                 className="object-cover rounded-md grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>

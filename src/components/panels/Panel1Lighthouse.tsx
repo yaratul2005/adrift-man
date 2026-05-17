@@ -26,6 +26,7 @@ export function Panel1Lighthouse({ isActive, speedRatio = 0.3 }: { isActive: boo
           src="/images/ocean-bg.jpg"
           alt="Dark ocean"
           fill
+          sizes="100vw"
           priority
           className="object-cover opacity-80"
           style={{ objectPosition: 'center' }}

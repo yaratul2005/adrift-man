@@ -50,6 +50,7 @@ export function Panel7Author({ isActive, speedRatio = 0.3 }: { isActive: boolean
             src="/images/author.jpg"
             alt="Andrew J. Key Jr."
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover"
             style={{ objectPosition: 'center top' }}
           />

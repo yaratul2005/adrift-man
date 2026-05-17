@@ -14,6 +14,7 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
           src="/images/ocean-bg.jpg"
           alt="Dark ocean"
           fill
+          sizes="100vw"
           priority
           className="object-cover opacity-60"
         />
