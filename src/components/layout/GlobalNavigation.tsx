@@ -83,7 +83,7 @@ export function GlobalNavigation() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out',
-          isScrolled || !isHomepage
+          true
             ? 'py-0'
             : 'py-0'
         )}
@@ -92,8 +92,8 @@ export function GlobalNavigation() {
         <div
           className={cn(
             'absolute inset-0 transition-all duration-700',
-            isScrolled || !isHomepage
-              ? 'bg-[#030508]/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_0_rgba(226,194,117,0.05),0_8px_32px_rgba(0,0,0,0.6)]'
+            true
+              ? 'bg-[#030508]/30 backdrop-blur-md border-b border-white/[0.06] shadow-[0_1px_0_rgba(226,194,117,0.05),0_8px_32px_rgba(0,0,0,0.6)]'
               : 'bg-transparent'
           )}
         />
