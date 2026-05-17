@@ -17,10 +17,16 @@ export function Panel1Lighthouse({ isActive, speedRatio = 0.3 }: { isActive: boo
 
   return (
     <BasePanel isActive={isActive} className="bg-black">
-      {/* Background Image with parallax */}
+      {/* Background Image with parallax and continuous slow zoom */}
       <div
-        className="absolute inset-0 z-0 transition-transform duration-[1200ms] ease-in-out"
-        style={{ transform: `translateX(${isActive ? 0 : 100 * speedRatio}vw)` }}
+        className={cn(
+          "absolute inset-0 z-0 transition-transform duration-[1200ms] ease-in-out",
+          isActive ? "scale-110" : "scale-100"
+        )}
+        style={{
+          transform: `translateX(${isActive ? 0 : 100 * speedRatio}vw) scale(${isActive ? 1.05 : 1})`,
+          transition: isActive ? 'transform 10s ease-out' : 'transform 1200ms ease-in-out'
+        }}
       >
         <Image
           src="/images/ocean-bg.jpg"
@@ -36,15 +42,21 @@ export function Panel1Lighthouse({ isActive, speedRatio = 0.3 }: { isActive: boo
 
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4">
-        <h1
-          className={cn(
-            "font-serif text-5xl md:text-7xl xl:text-8xl tracking-wide leading-[1.2] text-white/90 drop-shadow-2xl transition-all duration-1000 transform",
-            showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          There were moments&hellip;<br />
-          I should not have survived.
-        </h1>
+        {/* Continuous slow pan upward on the text while active */}
+        <div className={cn(
+          "transition-all duration-[8000ms] ease-out",
+          isActive ? "-translate-y-8" : "translate-y-0"
+        )}>
+          <h1
+            className={cn(
+              "font-serif text-5xl md:text-7xl xl:text-8xl tracking-wide leading-[1.2] text-white/90 drop-shadow-2xl transition-all duration-1000 transform",
+              showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            There were moments&hellip;<br />
+            I should not have survived.
+          </h1>
+        </div>
       </div>
     </BasePanel>
   );
