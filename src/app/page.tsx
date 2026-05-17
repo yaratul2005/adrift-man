@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Pause, Play, ArrowRight, ChevronRight, Instagram, Facebook } from 'lucide-react';
+import { Pause, Play, ArrowRight, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 // Panel dwell times (in ms). null means auto-play pauses at this panel.
@@ -20,6 +20,24 @@ const PANEL_DURATIONS = [
 ];
 
 const TOTAL_PANELS = PANEL_DURATIONS.length;
+
+function InstagramIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
 
 export default function CinematicHomepage() {
   const [currentPanel, setCurrentPanel] = useState(0);
@@ -386,10 +404,10 @@ export default function CinematicHomepage() {
 
             <div className="flex items-center gap-6 mb-12">
               <a href="https://www.instagram.com/andrew.key.10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="text-white/50 hover:text-site-accent transition-colors">
-                <Instagram size={24} />
+                <InstagramIcon size={24} />
               </a>
               <a href="https://www.facebook.com/profile.php?id=61556330845904" target="_blank" rel="noreferrer" className="text-white/50 hover:text-site-accent transition-colors">
-                <Facebook size={24} />
+                <FacebookIcon size={24} />
               </a>
             </div>
 
