@@ -1,3 +1,7 @@
+#!/bin/bash
+# Re-apply our clean version of page.tsx because the original one we overwrote had a merge conflict
+# since someone else also tried to rebuild the homepage differently
+cat << 'INNER_EOF' > src/app/page.tsx
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -100,8 +104,8 @@ export default function Home() {
         ref={containerRef}
         className="flex flex-row h-full transition-transform duration-[1200ms] ease-in-out"
         style={{
-          width: `calc(100vw * ${PANELS.length})`,
-          transform: `translateX(-${currentPanelIndex * 100}vw)`
+          width: \`calc(100vw * \${PANELS.length})\`,
+          transform: \`translateX(-\${currentPanelIndex * 100}vw)\`
         }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
@@ -134,7 +138,7 @@ export default function Home() {
                   ? "bg-white w-3 h-3 scale-110 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
                   : "bg-white/30 hover:bg-white/50"
               )}
-              aria-label={`Go to panel ${idx + 1}`}
+              aria-label={\`Go to panel \${idx + 1}\`}
             />
             {idx < PANELS.length - 1 && (
               <div className="w-4 h-[1px] bg-white/20 mx-1" />
@@ -158,3 +162,4 @@ export default function Home() {
     </div>
   );
 }
+INNER_EOF

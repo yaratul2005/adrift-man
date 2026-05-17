@@ -95,6 +95,7 @@ export function GlobalNavigation() {
             true
               ? 'bg-[#030508]/30 backdrop-blur-md border-b border-white/[0.06] shadow-[0_1px_0_rgba(226,194,117,0.05),0_8px_32px_rgba(0,0,0,0.6)]'
               : 'bg-transparent'
+
           )}
         />
 
