@@ -105,7 +105,7 @@ export default function CinematicHomepage() {
   const getParallaxStyle = (index: number) => {
     const diff = currentPanel - index;
     return {
-      transform: \`translateX(\${diff * 30}%)\`,
+      transform: `translateX(${diff * 30}%)`,
       transition: dragStart !== null ? 'none' : 'transform 1200ms cubic-bezier(0.4, 0, 0.2, 1)',
     };
   };
@@ -122,8 +122,8 @@ export default function CinematicHomepage() {
         onPointerCancel={handlePointerUp}
         className="flex flex-row h-full touch-none cursor-grab active:cursor-grabbing"
         style={{
-          width: \`\${TOTAL_PANELS * 100}vw\`,
-          transform: \`translateX(calc(-\${currentPanel * 100}vw + \${dragOffset}px))\`,
+          width: `${TOTAL_PANELS * 100}vw`,
+          transform: `translateX(calc(-${currentPanel * 100}vw + ${dragOffset}px))`,
           transition: dragStart !== null ? 'none' : 'transform 1200ms cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       >
@@ -271,7 +271,7 @@ export default function CinematicHomepage() {
                   "flex flex-col transition-all duration-[1000ms]",
                   currentPanel === 5 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 )}
-                style={{ transitionDelay: \`\${500 + idx * 300}ms\` }}
+                style={{ transitionDelay: `${500 + idx * 300}ms` }}
               >
                 <span className="font-serif text-6xl text-site-accent/30 leading-none mb-4">"</span>
                 <p className="font-serif text-xl md:text-2xl text-white/90 leading-snug mb-6 flex-grow">{review.text}</p>
@@ -428,7 +428,7 @@ export default function CinematicHomepage() {
                 ? "w-2.5 h-2.5 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]" 
                 : "w-1.5 h-1.5 bg-white/30 hover:bg-white/60"
             )}
-            aria-label={\`Go to panel \${i + 1}\`}
+            aria-label={`Go to panel ${i + 1}`}
           />
         ))}
       </div>
