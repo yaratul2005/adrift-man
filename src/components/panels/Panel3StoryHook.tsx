@@ -14,7 +14,7 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
         }}
       >
         <Image
-          src="/images/ocean-bg.jpg"
+          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           priority

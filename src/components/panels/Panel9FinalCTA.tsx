@@ -36,7 +36,7 @@ export function Panel9FinalCTA({ isActive, speedRatio = 0.3 }: { isActive: boole
         style={{ transform: `translateX(${isActive ? 0 : 50 * speedRatio}vw)` }}
       >
         <Image
-          src="/images/ocean-bg.jpg"
+          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           className="object-cover opacity-30"

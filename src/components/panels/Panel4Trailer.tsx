@@ -1,12 +1,13 @@
 import { BasePanel } from './BasePanel';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Play } from 'lucide-react';
 
 export function Panel4Trailer({ isActive, onContinue }: { isActive: boolean, onContinue: () => void }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview';
-  const thumbnailUrl = '/images/ocean-bg.jpg';
+  const thumbnailUrl = 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920';
 
   // Reset trailer state when navigating away
   useEffect(() => {
@@ -38,7 +39,7 @@ export function Panel4Trailer({ isActive, onContinue }: { isActive: boolean, onC
             aria-label="Play main trailer"
           >
             {/* Thumbnail Image */}
-            <img
+            <Image fill
               src={thumbnailUrl}
               alt="Adrift trailer thumbnail"
               className="object-cover w-full h-full opacity-60 transition-opacity duration-500 group-hover:opacity-40"
