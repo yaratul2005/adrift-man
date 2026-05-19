@@ -29,7 +29,7 @@ export function Panel1Lighthouse({ isActive, speedRatio = 0.3 }: { isActive: boo
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
+          src="https://source.unsplash.com/F_zec7P_OwA/1920x1080"
           alt="Dark ocean"
           fill
           priority
