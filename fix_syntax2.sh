@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/components/panels/Panel8Gallery.tsx
 import { BasePanel } from './BasePanel';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -30,7 +31,7 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
       <div className="w-full relative overflow-hidden h-[30vh] md:h-[40vh] flex items-center justify-center z-10 bg-white/5 py-4 my-8">
         <div
           className="flex gap-4 px-8 md:px-16 transition-transform duration-[1500ms] ease-out w-max"
-          style={{ transform: `translateX(${isActive ? 0 : 20}vw)` }}
+          style={{ transform: \`translateX(\${isActive ? 0 : 20}vw)\` }}
         >
           {galleryImages.map((src, idx) => (
             <div
@@ -39,11 +40,11 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
                 "relative h-full w-[40vw] md:w-[25vw] aspect-[4/3] flex-shrink-0 transition-all duration-800",
                 isActive ? "opacity-100 scale-100" : "opacity-0 scale-90"
               )}
-              style={{ transitionDelay: `${400 + idx * 100}ms` }}
+              style={{ transitionDelay: \`\${400 + idx * 100}ms\` }}
             >
               <Image
                 src={src}
-                alt={`Gallery Teaser ${idx + 1}`}
+                alt={\`Gallery Teaser \${idx + 1}\`}
                 fill
                 className="object-cover rounded-md grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -68,3 +69,4 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
     </BasePanel>
   );
 }
+INNER_EOF

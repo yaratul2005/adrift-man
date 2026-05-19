@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/components/panels/Panel9FinalCTA.tsx
 import { BasePanel } from './BasePanel';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -43,11 +44,11 @@ export function Panel9FinalCTA({ isActive, speedRatio = 0.3 }: { isActive: boole
     <BasePanel isActive={isActive} className="bg-black text-center flex flex-col justify-center items-center">
       {/* Background Image */}
       <div
-        className="absolute inset-0 z-0 transition-transform duration-[800ms] ease-in-out"
-        style={{ transform: `translateX(${isActive ? 0 : 50 * speedRatio}vw)` }}
+        className="absolute inset-0 z-0 transition-transform duration-[1200ms] ease-in-out"
+        style={{ transform: \`translateX(\${isActive ? 0 : 50 * speedRatio}vw)\` }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           className="object-cover opacity-30"
@@ -173,3 +174,4 @@ export function Panel9FinalCTA({ isActive, speedRatio = 0.3 }: { isActive: boole
     </BasePanel>
   );
 }
+INNER_EOF

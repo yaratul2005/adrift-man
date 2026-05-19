@@ -7,14 +7,14 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
     <BasePanel isActive={isActive} className="bg-black">
       {/* Background Image with parallax and slow pan */}
       <div
-        className="absolute inset-0 z-0 transition-transform duration-[1200ms] ease-in-out"
+        className="absolute inset-0 z-0 transition-transform duration-[800ms] ease-in-out"
         style={{
           transform: `translateX(${isActive ? 0 : 100 * speedRatio}vw) scale(${isActive ? 1.1 : 1})`,
           transition: isActive ? 'transform 12s linear' : 'transform 1200ms ease-in-out'
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           priority

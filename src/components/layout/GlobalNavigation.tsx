@@ -32,8 +32,8 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 const navLinks = [
   { href: '/#story', label: 'The Story', desc: 'A life transformed' },
   { href: '/author', label: 'About Andrew', desc: 'Meet the author' },
-  { href: '/video', label: 'Watch', desc: 'Trailer & clips' },
-  { href: '/gallery', label: 'Gallery', desc: 'Photography' },
+  { href: '/video', label: 'Trailers', desc: 'Trailer & clips' },
+  { href: '/gallery', label: 'Photos', desc: 'Photography' },
   { href: '/reviews', label: 'Reviews', desc: 'Reader voices' },
 ];
 

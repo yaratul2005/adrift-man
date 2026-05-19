@@ -20,7 +20,7 @@ export function Panel1Lighthouse({ isActive, speedRatio = 0.3 }: { isActive: boo
       {/* Background Image with parallax and continuous slow zoom */}
       <div
         className={cn(
-          "absolute inset-0 z-0 transition-transform duration-[1200ms] ease-in-out",
+          "absolute inset-0 z-0 transition-transform duration-[800ms] ease-in-out",
           isActive ? "scale-110" : "scale-100"
         )}
         style={{
@@ -29,7 +29,7 @@ export function Panel1Lighthouse({ isActive, speedRatio = 0.3 }: { isActive: boo
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           priority

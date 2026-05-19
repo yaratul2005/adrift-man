@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/components/panels/Panel4Trailer.tsx
 import { BasePanel } from './BasePanel';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
@@ -71,3 +72,4 @@ export function Panel4Trailer({ isActive, onContinue }: { isActive: boolean, onC
     </BasePanel>
   );
 }
+INNER_EOF

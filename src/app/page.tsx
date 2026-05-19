@@ -98,7 +98,7 @@ export default function Home() {
       {/* Horizontal Track Container */}
       <div
         ref={containerRef}
-        className="flex flex-row h-full transition-transform duration-[1200ms] ease-in-out"
+        className="flex flex-row h-full transition-transform duration-[800ms] ease-in-out"
         style={{
           width: `calc(100vw * ${PANELS.length})`,
           transform: `translateX(-${currentPanelIndex * 100}vw)`

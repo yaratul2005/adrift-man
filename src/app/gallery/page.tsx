@@ -47,7 +47,7 @@ const galleryItems = [
   {
     src: '/album/02.jpg',
     alt: 'Author archive photograph',
-    title: ' Leona M. Key holding Jeffery Key',
+    title: 'Leona M. Key holding Jeffery Key',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',
@@ -95,7 +95,7 @@ const galleryItems = [
   {
     src: '/album/1714491048334.jpg',
     alt: 'Author archive photograph',
-    title: ' Seaman Andrew J. Key III, USN',
+    title: 'Seaman Andrew J. Key III, USN',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-1',
@@ -359,7 +359,7 @@ const galleryItems = [
   {
     src: '/album/circa 1965.jpg',
     alt: 'Author archive photograph',
-    title: 'Form left to right: Debra D Key, Andrew J.Key, Jr., and Andrew J. Key III',
+    title: 'From left to right: Debra D Key, Andrew J.Key, Jr., and Andrew J. Key III',
     year: 'Archive',
     category: 'Life Event',
     span: 'col-span-2 row-span-2',

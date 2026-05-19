@@ -43,7 +43,7 @@ export function Panel7Author({ isActive, speedRatio = 0.3 }: { isActive: boolean
       {/* Right side: Image with Parallax */}
       <div className="w-full md:w-[60%] h-1/2 md:h-full relative overflow-hidden bg-site-bg z-0">
         <div
-          className="absolute inset-0 transition-transform duration-[1200ms] ease-in-out"
+          className="absolute inset-0 transition-transform duration-[800ms] ease-in-out"
           style={{ transform: `translateX(${isActive ? 0 : 50 * speedRatio}vw)` }}
         >
           <Image

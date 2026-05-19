@@ -1,3 +1,5 @@
+# "What the Readers Are Saying" Page — Fix Background
+cat << 'INNER_EOF' > src/components/panels/Panel6Reviews.tsx
 import { BasePanel } from './BasePanel';
 import { cn } from '@/lib/utils';
 import { Quote } from 'lucide-react';
@@ -101,3 +103,4 @@ export function Panel6Reviews({ isActive, speedRatio = 0.3 }: { isActive: boolea
     </BasePanel>
   );
 }
+INNER_EOF
