@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/components/sections/MainTrailerSection.tsx
 'use client';
 
 import { useState } from 'react';
@@ -10,7 +11,7 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview', 
+  videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview',
 }: MainTrailerSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -63,3 +64,4 @@ export function MainTrailerSection({
     </SectionWrapper>
   );
 }
+INNER_EOF

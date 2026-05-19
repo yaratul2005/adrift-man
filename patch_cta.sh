@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > src/components/sections/FinalCallToActionSection.tsx
 'use client';
 
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
@@ -16,7 +17,7 @@ export function FinalCallToActionSection() {
 
   return (
     <SectionWrapper id="final-cta" padding="xl" className="bg-[#05070B] border-t border-white/[0.05] relative overflow-hidden">
-      
+
       {/* Background ambient glow */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <div className="w-full max-w-lg aspect-square bg-site-accent/5 rounded-full blur-[120px]" />
@@ -122,3 +123,4 @@ export function FinalCallToActionSection() {
     </SectionWrapper>
   );
 }
+INNER_EOF

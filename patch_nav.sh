@@ -1,1 +1,2 @@
-sed -i 's/bg-\[#030508\]\/80 backdrop-blur-2xl/bg-\[#030508\]\/30 backdrop-blur-md/g' src/components/layout/GlobalNavigation.tsx
+sed -i "s/label: 'Watch'/label: 'Trailers'/g" src/components/layout/GlobalNavigation.tsx
+sed -i "s/label: 'Gallery'/label: 'Photos'/g" src/components/layout/GlobalNavigation.tsx

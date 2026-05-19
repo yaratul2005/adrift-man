@@ -28,7 +28,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 bg-site-bg">
         <Image
           // High-quality dark stormy ocean from Unsplash for dynamic cinematic feel
-          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920" 
+          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean background"
           fill
           priority
