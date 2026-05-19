@@ -1,1 +1,0 @@
-sed -i 's/<\/div>\n      <\/FadeUp>\n    <\/SectionWrapper>/<\/div>\n      <\/FadeUp>\n      <FadeUp delay={0.4} className="text-center mt-12">\n        <p className="font-sans text-xs text-site-text\/40 italic">\n          More reviews available on Amazon and Goodreads.\n        <\/p>\n      <\/FadeUp>\n    <\/SectionWrapper>/g' src/components/sections/ReviewsSection.tsx

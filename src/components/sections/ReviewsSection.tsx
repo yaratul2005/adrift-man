@@ -48,7 +48,7 @@ export function ReviewsSection() {
       </FadeUp>
 
       <FadeUp delay={0.2}>
-        <div className="relative mx-auto max-w-6xl px-12">
+        <div className="relative mx-auto max-w-6xl px-12 mb-16">
           
           {/* Carousel Viewport */}
           <div className="overflow-hidden" ref={emblaRef}>
@@ -94,6 +94,14 @@ export function ReviewsSection() {
             <ChevronRight size={40} strokeWidth={1.5} />
           </button>
 
+        </div>
+      </FadeUp>
+
+      <FadeUp delay={0.4}>
+        <div className="text-center mt-12">
+          <p className="text-site-secondary/80 font-sans tracking-wide">
+            More reviews available on Amazon and Goodreads
+          </p>
         </div>
       </FadeUp>
     </SectionWrapper>

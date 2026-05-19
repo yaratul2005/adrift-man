@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
 import { Play, X } from 'lucide-react';
@@ -15,12 +16,22 @@ export function MainTrailerSection({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <SectionWrapper id="trailer" padding="xl" className="bg-site-surface relative">
-      {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-site-accent/5 blur-[150px] rounded-[100%] pointer-events-none" />
+    <SectionWrapper id="trailer" padding="none" className="bg-site-surface relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/images/ocean-bg.jpg"
+          alt="Ocean Background"
+          fill
+          className="object-cover object-center opacity-40"
+          priority
+        />
+        {/* Gradient Overlay for blending */}
+        <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-site-bg/80" />
+      </div>
 
-      <FadeUp>
-        <div className="relative mx-auto w-full max-w-5xl flex flex-col items-center justify-center py-20 border border-white/[0.08] ring-1 ring-site-accent/10 rounded-2xl bg-black/40">
+      <FadeUp className="relative z-10 w-full max-w-5xl mx-auto px-6">
+        <div className="flex flex-col items-center justify-center gap-8">
 
           <button
             onClick={() => setIsModalOpen(true)}
@@ -29,8 +40,7 @@ export function MainTrailerSection({
             <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent">
               <Play size={40} className="ml-2" fill="currentColor" />
             </div>
-            { /* <h3 className="font-serif text-3xl md:text-5xl text-white tracking-widest drop-shadow-md transition-colors group-hover:text-site-accent">WATCH THE TRAILER</h3> */ }
-            <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow">Watch the Trailer</span>
+            <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow font-semibold">Watch the Trailer</span>
           </button>
 
         </div>
