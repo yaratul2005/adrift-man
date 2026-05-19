@@ -23,18 +23,21 @@ export function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Background Video */}
-      <div className="absolute inset-0 z-0 bg-black">
+      <div className="absolute inset-0 z-0 bg-site-bg">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 object-cover w-full h-full scale-105 origin-center opacity-70"
+          poster="/images/ocean-bg.jpg"
+          className="absolute inset-0 object-cover w-full h-full opacity-60 scale-105 origin-center"
         >
           <source src="/images/bg_1x.mp4" type="video/mp4" />
         </video>
-        {/* Minimal gradient overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
+        {/* Dark gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e14]/50 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-site-accent/5 rounded-full blur-[150px] pointer-events-none" />
       </div>
 
       {/* Live Particle Canvas */}

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FadeUp } from '@/components/ui/FadeUp';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -622,8 +622,32 @@ const galleryItems = [
   },
 ];
 
+import useEmblaCarousel from 'embla-carousel-react';
+
 export default function GalleryPage() {
   const [lightboxImg, setLightboxImg] = useState<(typeof galleryItems)[0] | null>(null);
+
+  const detailedItems = galleryItems.filter(item => !item.title.startsWith('Archive Journey'));
+  const archiveItems = galleryItems.filter(item => item.title.startsWith('Archive Journey'));
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    skipSnaps: false,
+    dragFree: true
+  });
+
+  // Simple auto-scroll
+  useEffect(() => {
+    if (!emblaApi) return;
+    const intervalId = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    emblaApi.on('pointerDown', () => clearInterval(intervalId));
+
+    return () => clearInterval(intervalId);
+  }, [emblaApi]);
 
   return (
     <>
@@ -654,9 +678,51 @@ export default function GalleryPage() {
           </div>
         </FadeUp>
 
-        {/* True Masonry-style grid */}
-        <div className="mx-auto max-w-7xl columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-          {galleryItems.map((item, index) => (
+        {/* Detailed Slider */}
+        {detailedItems.length > 0 && (
+          <FadeUp delay={0.2} className="mb-24">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <h2 className="font-serif text-3xl md:text-4xl text-site-text mb-8 text-center">Featured Moments</h2>
+              <div className="overflow-hidden rounded-xl border border-white/10 shadow-2xl" ref={emblaRef}>
+                <div className="flex touch-pan-y" style={{ backfaceVisibility: 'hidden' }}>
+                  {detailedItems.map((item, index) => (
+                    <div
+                      key={index}
+                      className="relative flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] aspect-[4/3] group cursor-zoom-in"
+                      onClick={() => setLightboxImg(item)}
+                    >
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      <div className="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span className="block font-sans text-[10px] tracking-[0.3em] uppercase text-site-accent mb-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                          {item.category} · {item.year}
+                        </span>
+                        <h3 className="font-serif text-lg text-white leading-snug drop-shadow-md">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeUp>
+        )}
+
+        <FadeUp delay={0.4}>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 text-center">
+            <h2 className="font-serif text-3xl md:text-4xl text-site-text">The Archives</h2>
+          </div>
+        </FadeUp>
+
+        {/* True Masonry-style grid for archives */}
+        <div className="mx-auto max-w-7xl columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 px-4 sm:px-6 lg:px-8">
+          {archiveItems.map((item, index) => (
             <FadeUp key={index} delay={(index % 10) * 0.05} className="break-inside-avoid">
               <button
                 onClick={() => setLightboxImg(item)}
