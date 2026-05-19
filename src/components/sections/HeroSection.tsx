@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FadeUp } from '@/components/ui/FadeUp';
 import { Button } from '@/components/ui/Button';
@@ -23,15 +22,15 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0 bg-site-bg">
-        <Image
-          src="/images/ocean-bg.jpg"
-          alt="Ocean lighthouse background"
-          fill
-          priority
-          className="object-cover opacity-60 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]"
-          style={{ objectPosition: 'center' }}
+        <video
+          src="/images/bg_1x.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full opacity-60 scale-105 origin-center"
         />
         {/* Dark gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/70 to-transparent" />
