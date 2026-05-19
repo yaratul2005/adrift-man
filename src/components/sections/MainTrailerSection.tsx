@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
-import { Play, X } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 interface MainTrailerSectionProps {
   videoUrl?: string;
@@ -13,7 +13,7 @@ interface MainTrailerSectionProps {
 export function MainTrailerSection({
   videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview', 
 }: MainTrailerSectionProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <SectionWrapper id="trailer" padding="xl" className="bg-site-surface relative">
@@ -22,57 +22,52 @@ export function MainTrailerSection({
 
       <FadeUp>
         <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/80 shadow-[0_20px_60px_-15px_rgba(226,194,117,0.15)] aspect-video border border-white/[0.08] ring-1 ring-site-accent/10">
+          {!isPlaying ? (
+            <div
+              className="absolute inset-0 cursor-pointer group w-full h-full flex flex-col items-center justify-center"
+              onClick={() => setIsPlaying(true)}
+              role="button"
+              aria-label="Play main trailer"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setIsPlaying(true);
+                }
+              }}
+            >
+              {/* Thumbnail Image */}
+              <Image
+                src="/images/ocean-bg.jpg"
+                alt="Adrift trailer background"
+                fill
+                className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-40"
+                priority
+              />
 
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="absolute inset-0 cursor-pointer group w-full h-full"
-            aria-label="Play main trailer"
-          >
-            {/* Thumbnail Image */}
-            <Image
-              src="/images/ocean-bg.jpg"
-              alt="Adrift trailer background"
-              fill
-              className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-40"
-              priority
-            />
-
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-500">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent mb-6">
-                <Play size={40} className="ml-2" fill="currentColor" />
+              {/* Play Button Overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-500">
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent mb-6">
+                  <Play size={40} className="ml-2" fill="currentColor" />
+                </div>
+                <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow font-semibold">Watch the Trailer</span>
               </div>
-              <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow font-semibold">Watch the Trailer</span>
             </div>
-          </button>
-
+          ) : (
+            <div className="absolute inset-0 w-full h-full bg-black">
+              <iframe
+                src={videoUrl}
+                width="100%"
+                height="100%"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                referrerPolicy="no-referrer"
+                className="w-full h-full border-0 absolute top-0 left-0"
+                title="Main Trailer"
+              ></iframe>
+            </div>
+          )}
         </div>
       </FadeUp>
-
-      {/* Fullscreen Video Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center animate-in fade-in duration-300">
-          <button
-            onClick={() => setIsModalOpen(false)}
-            className="absolute top-8 right-8 z-50 text-white/50 hover:text-white transition-colors"
-          >
-            <X size={32} />
-          </button>
-
-          <div className="w-[90vw] h-[80vh] max-w-6xl relative">
-            <iframe
-              src={videoUrl}
-              width="100%"
-              height="100%"
-              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-              allowFullScreen
-              referrerPolicy="no-referrer"
-              className="w-full h-full border-0 absolute top-0 left-0 rounded-xl shadow-2xl"
-              title="Main Trailer"
-            ></iframe>
-          </div>
-        </div>
-      )}
     </SectionWrapper>
   );
 }

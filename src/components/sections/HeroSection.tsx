@@ -12,7 +12,6 @@ export function HeroSection() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate normalized mouse position from -1 to 1
       const x = (e.clientX / window.innerWidth) * 2 - 1;
       const y = (e.clientY / window.innerHeight) * 2 - 1;
       setMousePos({ x, y });
@@ -24,19 +23,18 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Image with slight Ken Burns effect via scale */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-site-bg">
         <Image
-          // High-quality dark stormy ocean from Unsplash for dynamic cinematic feel
-          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
-          alt="Dark ocean background"
+          src="/images/ocean-bg.jpg"
+          alt="Ocean lighthouse background"
           fill
           priority
-          className="object-cover opacity-50 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards] mix-blend-luminosity"
-          style={{ objectPosition: 'center 60%' }}
+          className="object-cover opacity-60 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]"
+          style={{ objectPosition: 'center' }}
         />
-        {/* Dark gradient overlay for text legibility + richer ambient lighting */}
-        <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/80 to-transparent" />
+        {/* Dark gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e14]/50 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-site-accent/5 rounded-full blur-[150px] pointer-events-none" />
       </div>
@@ -78,7 +76,6 @@ export function HeroSection() {
         </FadeUp>
       </div>
 
-      {/* Add ken-burns animation utility class in tailwind or here */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes ken-burns {
           0% { transform: scale(1.05); }
