@@ -25,15 +25,16 @@ export function HeroSection() {
       {/* Background Video */}
       <div className="absolute inset-0 z-0 bg-black">
         <video
-          src="/images/bg_1x.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="object-cover w-full h-full scale-105 origin-center"
-        />
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-black/50" />
+          className="absolute inset-0 object-cover w-full h-full scale-105 origin-center opacity-70"
+        >
+          <source src="/images/bg_1x.mp4" type="video/mp4" />
+        </video>
+        {/* Minimal gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
       </div>
 
       {/* Live Particle Canvas */}
