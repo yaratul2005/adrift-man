@@ -32,14 +32,14 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
         )}>
           <p className={cn(
             "font-sans text-xs md:text-sm tracking-[0.3em] text-site-accent/90 uppercase mb-6 transition-all duration-1000 delay-300",
-            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+            isActive ? "opacity-100 translate-x-0 blur-0" : "opacity-0 -translate-x-[20vw] blur-sm"
           )}>
             A True Story
           </p>
 
           <h2 className={cn(
             "font-serif text-4xl md:text-6xl text-white leading-tight mb-8 transition-all duration-1000 delay-500",
-            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+            isActive ? "opacity-100 translate-x-0 blur-0" : "opacity-0 -translate-x-[20vw] blur-sm"
           )}>
             From a troubled youth to a Coast Guard officer —<br className="hidden md:block" />
             through failure, survival, and loss.
@@ -47,7 +47,7 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
 
           <p className={cn(
             "font-sans text-lg md:text-xl text-white/70 font-light tracking-wide transition-all duration-1000 delay-700",
-            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+            isActive ? "opacity-100 translate-x-0 blur-0" : "opacity-0 -translate-x-[20vw] blur-sm"
           )}>
             A life shaped by forces both seen and unseen.
           </p>

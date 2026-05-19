@@ -1,3 +1,5 @@
+# "as you can see in the screenshot, make this gallery images auto slide."
+cat << 'INNER_EOF' > src/components/panels/Panel8Gallery.tsx
 import { BasePanel } from './BasePanel';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -53,7 +55,7 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
       <div className="w-[150vw] md:w-[120vw] relative h-[30vh] md:h-[40vh] flex items-center z-10 py-4 my-8">
         <div
           className="flex gap-4 md:gap-8 px-8 transition-transform duration-[1500ms] ease-out w-max"
-          style={{ transform: `translateX(calc(${isActive ? slideOffset : 20}vw + ${slideOffset}px))` }}
+          style={{ transform: \`translateX(calc(\${isActive ? slideOffset : 20}vw + \${slideOffset}px))\` }}
         >
           {galleryImages.map((src, idx) => (
             <div
@@ -62,11 +64,11 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
                 "relative h-full w-[50vw] md:w-[35vw] lg:w-[25vw] aspect-[4/3] flex-shrink-0 transition-all duration-800",
                 isActive ? "opacity-100 scale-100" : "opacity-0 scale-90"
               )}
-              style={{ transitionDelay: `${400 + idx * 100}ms` }}
+              style={{ transitionDelay: \`\${400 + idx * 100}ms\` }}
             >
               <Image
                 src={src}
-                alt={`Gallery Teaser ${idx + 1}`}
+                alt={\`Gallery Teaser \${idx + 1}\`}
                 fill
                 className="object-cover rounded-md grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -80,11 +82,11 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
                 "relative h-full w-[50vw] md:w-[35vw] lg:w-[25vw] aspect-[4/3] flex-shrink-0 transition-all duration-800",
                 isActive ? "opacity-100 scale-100" : "opacity-0 scale-90"
               )}
-              style={{ transitionDelay: `${400 + (idx + galleryImages.length) * 100}ms` }}
+              style={{ transitionDelay: \`\${400 + (idx + galleryImages.length) * 100}ms\` }}
             >
               <Image
                 src={src}
-                alt={`Gallery Teaser ${idx + 1}`}
+                alt={\`Gallery Teaser \${idx + 1}\`}
                 fill
                 className="object-cover rounded-md grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -109,3 +111,4 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
     </BasePanel>
   );
 }
+INNER_EOF

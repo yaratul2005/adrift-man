@@ -69,7 +69,7 @@ export function Panel9FinalCTA({ isActive, speedRatio = 0.3 }: { isActive: boole
 
         <h1 className={cn(
           "font-serif text-6xl md:text-8xl tracking-[0.2em] text-white mb-4 transition-all duration-1000 delay-300",
-          isActive ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          isActive ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-90 blur-md"
         )}>
           ADRIFT
         </h1>
