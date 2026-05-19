@@ -2,7 +2,7 @@
 
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
-import { Button } from '@/components/ui/Button';
+
 import { StoreButton } from '@/components/ui/StoreButton';
 import { Play, X } from 'lucide-react';
 import { useState } from 'react';
