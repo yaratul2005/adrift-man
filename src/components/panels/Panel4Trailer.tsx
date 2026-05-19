@@ -21,7 +21,7 @@ export function Panel4Trailer({ isActive, onContinue }: { isActive: boolean, onC
 
       <div className={cn(
         "relative flex flex-col items-center justify-center z-10 transition-all duration-1000 delay-300",
-        isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       )}>
         {/* Watch the Trailer Button replacing the inline player */}
         <button

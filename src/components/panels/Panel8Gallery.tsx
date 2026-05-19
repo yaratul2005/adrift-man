@@ -18,7 +18,7 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
       {/* Top Text Overlay */}
       <div className={cn(
         "relative z-20 text-center mb-12 transition-all duration-800 delay-300",
-        isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+        isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
       )}>
         { /* <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">A Life in Photographs</h2> */ }
         <p className="font-sans text-sm md:text-base tracking-[0.2em] text-white/60 uppercase">
@@ -55,7 +55,7 @@ export function Panel8Gallery({ isActive, speedRatio = 0.3 }: { isActive: boolea
       {/* Bottom CTA */}
       <div className={cn(
         "relative z-20 mt-8 transition-all duration-800 delay-700",
-        isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       )}>
         <Link
           href="/gallery"

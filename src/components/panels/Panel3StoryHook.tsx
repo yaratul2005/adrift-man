@@ -7,14 +7,14 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
     <BasePanel isActive={isActive} className="bg-black">
       {/* Background Image with parallax and slow pan */}
       <div
-        className="absolute inset-0 z-0 transition-transform duration-[800ms] ease-in-out"
+        className="absolute inset-0 z-0 transition-transform duration-[2000ms] ease-in-out"
         style={{
           transform: `translateX(${isActive ? 0 : 100 * speedRatio}vw) scale(${isActive ? 1.1 : 1})`,
           transition: isActive ? 'transform 12s linear' : 'transform 1200ms ease-in-out'
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           priority
@@ -32,14 +32,14 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
         )}>
           <p className={cn(
             "font-sans text-xs md:text-sm tracking-[0.3em] text-site-accent/90 uppercase mb-6 transition-all duration-1000 delay-300",
-            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           )}>
             A True Story
           </p>
 
           <h2 className={cn(
             "font-serif text-4xl md:text-6xl text-white leading-tight mb-8 transition-all duration-1000 delay-500",
-            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           )}>
             From a troubled youth to a Coast Guard officer —<br className="hidden md:block" />
             through failure, survival, and loss.
@@ -47,7 +47,7 @@ export function Panel3StoryHook({ isActive, speedRatio = 0.3 }: { isActive: bool
 
           <p className={cn(
             "font-sans text-lg md:text-xl text-white/70 font-light tracking-wide transition-all duration-1000 delay-700",
-            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           )}>
             A life shaped by forces both seen and unseen.
           </p>

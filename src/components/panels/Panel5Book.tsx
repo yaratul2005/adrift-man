@@ -15,7 +15,7 @@ export function Panel5Book({ isActive, speedRatio = 0.3 }: { isActive: boolean, 
 
         <div className={cn(
           "relative aspect-[2/3] w-48 md:w-80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-md overflow-hidden transition-all duration-1000",
-          isActive ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-8"
+          isActive ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"
         )}>
           <Image
             src="/images/book-front.jpeg"

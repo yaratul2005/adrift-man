@@ -98,7 +98,7 @@ export default function Home() {
       {/* Horizontal Track Container */}
       <div
         ref={containerRef}
-        className="flex flex-row h-full transition-transform duration-[800ms] ease-in-out"
+        className="flex flex-row h-full transition-transform duration-[2000ms] ease-in-out"
         style={{
           width: `calc(100vw * ${PANELS.length})`,
           transform: `translateX(-${currentPanelIndex * 100}vw)`
@@ -122,26 +122,6 @@ export default function Home() {
         <Panel9FinalCTA isActive={currentPanelIndex === 8} speedRatio={0.3} />
       </div>
 
-      {/* Progress Indicator (Dot-Nav) */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 z-40 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/5">
-        {PANELS.map((panel, idx) => (
-          <div key={panel.id} className="flex items-center">
-            <button
-              onClick={() => goToPanel(idx)}
-              className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300",
-                idx === currentPanelIndex
-                  ? "bg-white w-3 h-3 scale-110 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-                  : "bg-white/30 hover:bg-white/50"
-              )}
-              aria-label={`Go to panel ${idx + 1}`}
-            />
-            {idx < PANELS.length - 1 && (
-              <div className="w-4 h-[1px] bg-white/20 mx-1" />
-            )}
-          </div>
-        ))}
-      </div>
 
       {/* Play/Pause Toggle */}
       <button

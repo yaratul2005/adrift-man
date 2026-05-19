@@ -32,7 +32,7 @@ export function Panel6Reviews({ isActive, speedRatio = 0.3 }: { isActive: boolea
       {/* Ocean water background consistent with other panels */}
       <div
         className={cn(
-          "absolute inset-0 z-0 transition-transform duration-[800ms] ease-in-out",
+          "absolute inset-0 z-0 transition-transform duration-[2000ms] ease-in-out",
           isActive ? "scale-105" : "scale-100"
         )}
         style={{
@@ -41,7 +41,7 @@ export function Panel6Reviews({ isActive, speedRatio = 0.3 }: { isActive: boolea
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1542385262-cdf06b2bb4fa?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=1920"
           alt="Dark ocean"
           fill
           className="object-cover opacity-20"
@@ -63,7 +63,7 @@ export function Panel6Reviews({ isActive, speedRatio = 0.3 }: { isActive: boolea
 
         <h2 className={cn(
           "font-sans text-xs tracking-[0.3em] text-white/50 uppercase mb-16 transition-all duration-1000 relative z-20",
-          isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+          isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-12"
         )}>
           What Readers Are Saying
         </h2>
