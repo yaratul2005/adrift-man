@@ -16,31 +16,34 @@ export function MainTrailerSection({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <SectionWrapper id="trailer" padding="none" className="bg-site-surface relative h-[60vh] min-h-[400px] flex items-center justify-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-          src="/images/ocean-bg.jpg"
-          alt="Ocean Background"
-          fill
-          className="object-cover object-center opacity-40"
-          priority
-        />
-        {/* Gradient Overlay for blending */}
-        <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-site-bg/80" />
-      </div>
+    <SectionWrapper id="trailer" padding="xl" className="bg-site-surface relative">
+      {/* Background ambient light */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-site-accent/5 blur-[150px] rounded-[100%] pointer-events-none" />
 
-      <FadeUp className="relative z-10 w-full max-w-5xl mx-auto px-6">
-        <div className="flex flex-col items-center justify-center gap-8">
+      <FadeUp>
+        <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/80 shadow-[0_20px_60px_-15px_rgba(226,194,117,0.15)] aspect-video border border-white/[0.08] ring-1 ring-site-accent/10">
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="group flex flex-col items-center gap-6 cursor-pointer"
+            className="absolute inset-0 cursor-pointer group w-full h-full"
+            aria-label="Play main trailer"
           >
-            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent">
-              <Play size={40} className="ml-2" fill="currentColor" />
+            {/* Thumbnail Image */}
+            <Image
+              src="/images/ocean-bg.jpg"
+              alt="Adrift trailer background"
+              fill
+              className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-40"
+              priority
+            />
+
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-500">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent mb-6">
+                <Play size={40} className="ml-2" fill="currentColor" />
+              </div>
+              <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow font-semibold">Watch the Trailer</span>
             </div>
-            <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow font-semibold">Watch the Trailer</span>
           </button>
 
         </div>
