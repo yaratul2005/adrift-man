@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FadeUp } from '@/components/ui/FadeUp';
 import { Button } from '@/components/ui/Button';
 import { OceanMistParticles } from '@/components/ui/OceanMistParticles';
@@ -22,18 +23,16 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-site-bg">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/ocean-bg.jpg"
-          className="absolute inset-0 object-cover w-full h-full opacity-60 scale-105 origin-center"
-        >
-          <source src="/images/bg_1x.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/images/mainoc.jpg"
+          alt="Ocean lighthouse background"
+          fill
+          priority
+          className="object-cover opacity-60 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]"
+          style={{ objectPosition: 'center' }}
+        />
         {/* Dark gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e14]/50 to-transparent" />
