@@ -79,7 +79,7 @@ export default function VideoPage() {
                   >
                     {/* Thumbnail Image */}
                     <Image
-                      src="/images/ocean-bg.jpg"
+                      src="/images/book-cover.jpg"
                       alt={video.title}
                       fill
                       className="object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-40"

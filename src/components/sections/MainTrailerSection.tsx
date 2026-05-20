@@ -55,7 +55,7 @@ export function MainTrailerSection({
             >
               {/* Thumbnail Image */}
               <Image
-                src="/images/ocean-bg.jpg"
+                src="/images/trailerthumb.png"
                 alt="Adrift trailer background"
                 fill
                 className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-40"
