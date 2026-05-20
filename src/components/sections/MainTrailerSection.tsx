@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
@@ -11,9 +11,27 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  videoUrl = 'https://drive.google.com/file/d/1bl89XnjH02dov1JOvxORZiZnuWwDXQJO/preview', 
+  videoUrl = 'https://drive.google.com/file/d/1bl89XnjH02dov1JOvxORZiZnuWwDXQJO/preview',
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const handlePlayTrailer = () => {
+      setIsPlaying(true);
+    };
+
+    window.addEventListener('playTrailer', handlePlayTrailer);
+
+    // Check if the URL already has the hash on load (optional, but good for direct links)
+    if (window.location.hash === '#trailer') {
+      // Optional: uncomment if you want direct link to #trailer to also auto-play
+      // setIsPlaying(true);
+    }
+
+    return () => {
+      window.removeEventListener('playTrailer', handlePlayTrailer);
+    };
+  }, []);
 
   return (
     <SectionWrapper id="trailer" padding="xl" className="bg-site-surface relative">
@@ -55,7 +73,7 @@ export function MainTrailerSection({
           ) : (
             <div className="absolute inset-0 w-full h-full bg-black">
               <iframe
-                src={videoUrl}
+                src={videoUrl.includes('?') ? `${videoUrl}&autoplay=1` : `${videoUrl}?autoplay=1`}
                 width="100%"
                 height="100%"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
