@@ -4,16 +4,13 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
 
 import { StoreButton } from '@/components/ui/StoreButton';
-import { Play, X } from 'lucide-react';
-import { useState } from 'react';
+import { Button } from '@/components/ui/Button';
+
 
 const AMAZON_URL = 'https://www.amazon.com/Adrift-Gods-Agents-Helped-Transform/dp/B0CWPV45NW';
 const BN_URL = 'https://www.barnesandnoble.com/w/adrift-jr-andrew-j-key/1144974499?ean=9798890418159';
 
 export function FinalCallToActionSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview';
-
   return (
     <SectionWrapper id="final-cta" padding="xl" className="bg-[#05070B] border-t border-white/[0.05] relative overflow-hidden">
 
@@ -51,13 +48,18 @@ export function FinalCallToActionSection() {
         </FadeUp>
 
         <FadeUp delay={0.4}>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="group flex items-center gap-3 px-8 py-3 mx-auto rounded-full bg-white/[0.04] border border-white/20 text-white hover:bg-site-accent hover:border-site-accent hover:text-black transition-all duration-300 font-sans tracking-wide mb-12"
-          >
-            <Play size={18} fill="currentColor" />
-            <span className="uppercase text-sm tracking-widest font-semibold">Watch the Trailer</span>
-          </button>
+          <div className="flex justify-center mb-12">
+            <Button asChild size="lg" className="px-10">
+              <a
+                href="#trailer"
+                onClick={() => {
+                  window.dispatchEvent(new Event('playTrailer'));
+                }}
+              >
+                <span className="mr-2 text-lg leading-none">&#9654;</span> Watch the Trailer
+              </a>
+            </Button>
+          </div>
         </FadeUp>
 
         {/* Store buttons with logos — centre-aligned */}
@@ -95,30 +97,7 @@ export function FinalCallToActionSection() {
 
       </div>
 
-      {/* Fullscreen Video Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center animate-in fade-in duration-300">
-          <button
-            onClick={() => setIsModalOpen(false)}
-            className="absolute top-8 right-8 z-50 text-white/50 hover:text-white transition-colors"
-          >
-            <X size={32} />
-          </button>
 
-          <div className="w-[90vw] h-[80vh] max-w-6xl relative">
-            <iframe
-              src={videoUrl}
-              width="100%"
-              height="100%"
-              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-              allowFullScreen
-              referrerPolicy="no-referrer"
-              className="w-full h-full border-0 absolute top-0 left-0 rounded-xl shadow-2xl"
-              title="Main Trailer"
-            ></iframe>
-          </div>
-        </div>
-      )}
     </SectionWrapper>
   );
 }

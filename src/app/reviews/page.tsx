@@ -70,7 +70,7 @@ export default function ReviewsPage() {
               href="https://www.goodreads.com/book/show/209276776-adrift"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex-shrink-0 w-32 h-12 rounded-lg overflow-hidden bg-white/95 flex items-center justify-center p-2 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 border border-white/10 hover:border-site-accent/30"
+              className="relative flex-shrink-0 w-56 h-20 rounded-lg overflow-hidden bg-white/95 flex items-center justify-center p-3 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 border border-white/10 hover:border-site-accent/30"
             >
               <img
                 src="/images/logos/goodreads.png"
