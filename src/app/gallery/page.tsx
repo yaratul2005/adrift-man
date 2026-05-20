@@ -60,14 +60,6 @@ const galleryItems = [
     span: 'col-span-2 row-span-1',
   },
   {
-    src: '/album/1714491028475_edited.jpg',
-    alt: 'Author archive photograph',
-    title: 'PAST moments',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-1 row-span-2',
-  },
-  {
     src: '/album/1714491031459.jpg',
     alt: 'Author archive photograph',
     title: 'Jeffery Allen Key age 1 year old',
