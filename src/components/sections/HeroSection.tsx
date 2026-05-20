@@ -27,7 +27,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 bg-black overflow-hidden">
         <div className="absolute inset-0 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]">
           <Image
-            src="/images/mainoc.jpg"
+            src="https://tenor.com/bfgdG.gif"
             alt="Ocean lighthouse background"
             fill
             priority
