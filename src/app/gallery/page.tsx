@@ -348,7 +348,7 @@ const galleryItems = [
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/album/currentenhanced.jpg',
+    src: '/album/1714491028475_edited.jpg',
     alt: 'Author archive photograph',
     title: 'Archive Journey 45',
     year: 'Archive',
