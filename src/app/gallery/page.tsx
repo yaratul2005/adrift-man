@@ -53,14 +53,6 @@ const galleryItems = [
     span: 'col-span-2 row-span-2',
   },
   {
-    src: '/album/03.jpg',
-    alt: 'Author archive photograph',
-    title: 'Music and memory',
-    year: 'Archive',
-    category: 'Life Event',
-    span: 'col-span-1 row-span-1',
-  },
-  {
     src: '/album/1714491009852.jpg',
     alt: 'Andrew Jackson Key, Sr.',
     title: 'Andrew Jackson Key, Sr.',
