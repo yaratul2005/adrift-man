@@ -33,15 +33,6 @@ const galleryItems = [
     category: 'Coast Guard Operations',
     span: 'col-span-2 row-span-1',
   },
-  {
-    // authornow.jpg is a distinct side-profile portrait, different from family-ph.jpg
-    src: '/images/authornow.jpg',
-    alt: 'Andrew J. Key Jr. — reflective side portrait in officer\'s cap',
-    title: 'Andrew — A Life of Service',
-    year: 'Recent',
-    category: 'The Author',
-    span: 'col-span-1 row-span-1',
-  },
 
   // ── Album ─────────────────────────────────────────────
   {
