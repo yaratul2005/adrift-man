@@ -62,22 +62,10 @@ export default function ReviewsPage() {
 
       <FadeUp delay={0.4}>
         <div className="text-center mt-16 flex flex-col items-center">
-          <p className="text-site-secondary/80 font-sans tracking-wide mb-6">
+          <p className="font-sans tracking-wide mb-6 text-site-accent font-semibold text-lg drop-shadow-md">
             More reviews available on:
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://www.amazon.com/Adrift-Gods-Agents-Helped-Transform/dp/B0CWPV45NW"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative flex-shrink-0 w-32 h-12 rounded-lg overflow-hidden bg-white/95 flex items-center justify-center p-2 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 border border-white/10 hover:border-site-accent/30"
-            >
-              <img
-                src="/images/logos/amazon.jpg"
-                alt="Amazon"
-                className="w-full h-full object-contain p-1"
-              />
-            </a>
             <a
               href="https://www.goodreads.com/book/show/209276776-adrift"
               target="_blank"
