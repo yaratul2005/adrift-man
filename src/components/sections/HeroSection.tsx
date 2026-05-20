@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { FadeUp } from '@/components/ui/FadeUp';
 import { Button } from '@/components/ui/Button';
 import { OceanMistParticles } from '@/components/ui/OceanMistParticles';
@@ -23,21 +22,21 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Image with Ken Burns effect */}
-      <div className="absolute inset-0 z-0 bg-black overflow-hidden">
-        <div className="absolute inset-0 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]">
-          <Image
-            src="https://tenor.com/bfgdG.gif"
-            alt="Ocean lighthouse background"
-            fill
-            priority
-            className="object-cover"
-            style={{ objectPosition: 'center 60%' }}
-          />
-        </div>
-        {/* Enhanced gradient overlays for cinematic depth and text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent" />
+      {/* Background Video with image fallback */}
+      <div className="absolute inset-0 z-0 bg-site-bg bg-[url('/life_album/ocean01.jpg')] bg-cover bg-center">
+        <video
+          src="/images/bg_1x.mp4"
+          poster="/life_album/ocean01.jpg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full scale-105 origin-center bg-transparent"
+        />
+        {/* Dark gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#030508]/90 via-[#030508]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030508]/50 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-site-accent/5 rounded-full blur-[150px] pointer-events-none" />
       </div>
 
       {/* Live Particle Canvas */}
