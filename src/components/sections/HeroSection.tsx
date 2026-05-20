@@ -24,19 +24,17 @@ export function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-site-bg">
+      <div className="absolute inset-0 z-0 bg-black">
         <Image
           src="/images/mainoc.jpg"
           alt="Ocean lighthouse background"
           fill
           priority
-          className="object-cover opacity-60 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]"
+          className="object-cover scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]"
           style={{ objectPosition: 'center' }}
         />
-        {/* Dark gradient overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-site-bg/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e14]/50 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-site-accent/5 rounded-full blur-[150px] pointer-events-none" />
+        {/* Simplified gradient overlay to avoid double-darkening and fix text legibility */}
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Live Particle Canvas */}
