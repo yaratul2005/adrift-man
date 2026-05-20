@@ -11,7 +11,7 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview', 
+  videoUrl = 'https://drive.google.com/file/d/1bl89XnjH02dov1JOvxORZiZnuWwDXQJO/preview', 
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
