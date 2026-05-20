@@ -23,18 +23,21 @@ export function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-black">
-        <Image
-          src="/images/mainoc.jpg"
-          alt="Ocean lighthouse background"
-          fill
-          priority
-          className="object-cover scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]"
-          style={{ objectPosition: 'center' }}
-        />
-        {/* Simplified gradient overlay to avoid double-darkening and fix text legibility */}
-        <div className="absolute inset-0 bg-black/40" />
+      {/* Background Image with Ken Burns effect */}
+      <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+        <div className="absolute inset-0 scale-105 origin-center animate-[ken-burns_40s_ease-out_forwards]">
+          <Image
+            src="/images/mainoc.jpg"
+            alt="Ocean lighthouse background"
+            fill
+            priority
+            className="object-cover"
+            style={{ objectPosition: 'center 60%' }}
+          />
+        </div>
+        {/* Enhanced gradient overlays for cinematic depth and text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent" />
       </div>
 
       {/* Live Particle Canvas */}
