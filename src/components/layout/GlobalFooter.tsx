@@ -26,7 +26,7 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 
 const navLinks = [
   { href: '/author', label: 'About Andrew' },
-  { href: '/video', label: 'Watch' },
+  { href: '/video', label: 'Video' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/reviews', label: 'Reviews' },
 ];
