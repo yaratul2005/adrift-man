@@ -1,39 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-abyss: #f0ede8;
-  --color-navy: #0a0e1a;
-  --color-ocean: #0d1f3c;
-  --color-mist: #111827;
-  --color-fog: #374151;
-  --color-gold: #b4860b;
-  --color-gold-dim: #8a6e30;
-
-  --color-site-bg: #f8f9fa;
-  --color-site-surface: #ffffff;
-  --color-site-accent: #c9a84c;
-  --color-site-text: #1a1a1a;
-  --color-site-secondary: #4a5568;
+  --color-site-bg: #030508;
+  --color-site-surface: #0a0e14;
+  --color-site-accent: #E2C275;
+  --color-site-accent-dark: #B49442;
+  --color-site-text: #F8F9FA;
+  --color-site-secondary: #A1A9B3;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-@layer base {
-  body {
-    @apply text-mist font-serif antialiased overflow-x-hidden;
-    background: transparent !important;
-  }
-}
-
-:root {
-  --abyss: #f0ede8;
-  --navy: #0a0e1a;
-  --ocean: #0d1f3c;
-  --mist: #111827;
-  --fog: #374151;
-  --gold: #b4860b;
-  --gold-dim: #8a6e30;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @utility focus-ring {
@@ -41,24 +17,15 @@
 }
 
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold to-gold-dim;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-site-accent to-site-accent-dark;
 }
 
 @utility glass-panel {
-  @apply bg-white/20 backdrop-blur-xl border border-white/40 shadow-lg;
+  @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@layer base {
+  body {
+    @apply bg-site-bg text-site-text font-sans antialiased;
   }
 }

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import { GlobalNavigation } from "@/components/layout/GlobalNavigation";
+import { GlobalFooter } from "@/components/layout/GlobalFooter";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -26,11 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="text-mist font-serif antialiased selection:bg-gold selection:text-abyss min-h-screen bg-transparent">
-        <main className="w-full relative z-10">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+      <body className="bg-site-bg text-site-text font-sans antialiased selection:bg-site-accent selection:text-site-bg min-h-screen flex flex-col">
+        <GlobalNavigation />
+        <main className="flex-grow">
           {children}
         </main>
+        <GlobalFooter />
       </body>
     </html>
   );
