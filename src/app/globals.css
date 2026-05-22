@@ -1,31 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-site-bg: #030508;
-  --color-site-surface: #0a0e14;
-  --color-site-accent: #E2C275;
-  --color-site-accent-dark: #B49442;
-  --color-site-text: #F8F9FA;
-  --color-site-secondary: #A1A9B3;
+  --color-abyss: #07090f;
+  --color-navy: #0a0e1a;
+  --color-ocean: #0d1f3c;
+  --color-mist: #f0ede8;
+  --color-fog: #8a9bb0;
+  --color-gold: #c9a84c;
+  --color-gold-dim: #8a6e30;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-@utility focus-ring {
-  @apply outline-none focus-visible:ring-2 focus-visible:ring-site-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg transition-all;
-}
-
-@utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-site-accent to-site-accent-dark;
-}
-
-@utility glass-panel {
-  @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {
   body {
-    @apply bg-site-bg text-site-text font-sans antialiased;
+    @apply bg-abyss text-mist font-serif antialiased overflow-x-hidden;
+  }
+}
+
+/* Base custom properties for dynamic access if needed */
+:root {
+  --abyss: #07090f;
+  --navy: #0a0e1a;
+  --ocean: #0d1f3c;
+  --mist: #f0ede8;
+  --fog: #8a9bb0;
+  --gold: #c9a84c;
+  --gold-dim: #8a6e30;
+}
+
+/* Utility to ensure elements respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
