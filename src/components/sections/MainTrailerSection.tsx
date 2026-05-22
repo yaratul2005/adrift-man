@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { FadeUp } from '@/components/ui/FadeUp';
@@ -14,6 +14,16 @@ export function MainTrailerSection({
   videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview',
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const handlePlayTrailer = () => {
+      setIsPlaying(true);
+    };
+
+    window.addEventListener('playTrailer', handlePlayTrailer);
+    return () => window.removeEventListener('playTrailer', handlePlayTrailer);
+  }, []);
+
 
   return (
     <SectionWrapper id="trailer" padding="xl" className="bg-site-surface relative">
@@ -37,7 +47,7 @@ export function MainTrailerSection({
             >
               {/* Thumbnail Image */}
               <Image
-                src="/images/ocean-bg.jpg"
+                src="/images/front-trailer-thumb.png"
                 alt="Adrift trailer background"
                 fill
                 className="object-cover opacity-60 transition-opacity duration-500 group-hover:opacity-40"
