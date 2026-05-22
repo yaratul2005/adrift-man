@@ -22,6 +22,7 @@ const useFontsLoaded = () => {
 
 export function CinematicExperience() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const videoBgRef = useRef<HTMLDivElement>(null);
   const fontsLoaded = useFontsLoaded();
   const [trailerOpen, setTrailerOpen] = useState(false);
@@ -148,41 +149,50 @@ export function CinematicExperience() {
       });
     }
 
-    // Cancel auto-scroll if user interacts
+
     const cancelAutoScroll = () => {
         if (autoScrollActive) {
             setAutoScrollActive(false);
             gsap.killTweensOf(window, "scrollTo");
-            if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
         }
     };
 
     window.addEventListener('wheel', cancelAutoScroll, { passive: true });
     window.addEventListener('touchstart', cancelAutoScroll, { passive: true });
 
-    // Start initial sequence
-    if (autoScrollActive && !isReducedMotion && timelines.length > 0) {
+    // Start initial sequence for non-stop scroll
+    if (autoScrollActive && !isReducedMotion) {
         ScrollTrigger.refresh();
-        // Manually play first timeline as it might already be in view on load
-        timelines[0].play();
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-        scrollTimeoutRef.current = setTimeout(() => {
-            if (autoScrollActive && panels.length > 1) {
+        // Wait 6 seconds for intro, then scroll to bottom continuously over ~90 seconds
+        setTimeout(() => {
+            if (autoScrollActive) {
                 gsap.to(window, {
-                    duration: 2,
-                    scrollTo: { y: panels[1], offsetY: 0 },
-                    ease: "power2.inOut"
+                    duration: 90,
+                    scrollTo: { y: maxScroll, autoKill: true },
+                    ease: "none",
+                    onComplete: () => setAutoScrollActive(false)
                 });
             }
-        }, (timelines[0].duration() + 5) * 1000);
+        }, 6000);
     }
+
+    let resizeTimer: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 200);
+    };
+    window.addEventListener('resize', handleResize);
 
     return () => {
       lenis.destroy();
       ScrollTrigger.getAll().forEach(t => t.kill());
       window.removeEventListener('wheel', cancelAutoScroll);
       window.removeEventListener('touchstart', cancelAutoScroll);
-      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      window.removeEventListener('resize', handleResize);
     };
   }, [fontsLoaded, autoScrollActive]);
 
@@ -197,22 +207,14 @@ export function CinematicExperience() {
   return (
     <div className="bg-transparent text-mist min-h-screen selection:bg-gold selection:text-abyss">
       {/* Clear Video Background */}
-      <div className="fixed inset-0 z-[-1] bg-video-wrapper opacity-0 pointer-events-none" ref={videoBgRef}>
-        <video
-          src="/images/bg_1x.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        />
-        {/* Light scrim overlay to ensure text readability on the light theme */}
-        <div className="absolute inset-0 bg-white/70 md:bg-white/60"></div>
+      <div className="fixed inset-0 z-[-1] pointer-events-none w-full h-full opacity-100">
+        <Image src="/images/lighthouse.png" alt="Lighthouse Background" fill className="object-cover" priority />
       </div>
 
-      <div ref={containerRef} className="relative w-full z-10 flex flex-col">
+      <div ref={containerRef} className="relative z-10 w-full md:h-screen md:overflow-hidden">
+        <div ref={trackRef} className="flex flex-col md:flex-row md:flex-nowrap md:h-full md:w-[600vw] items-center">
         {/* 1. ATMOSPHERE */}
-        <section className="panel panel-atmosphere w-full min-h-screen flex flex-col items-center justify-center relative shrink-0">
+        <section className="panel panel-atmosphere w-full h-screen md:w-[100vw] flex flex-col items-center justify-center relative shrink-0">
           <div className="text-center space-y-6 max-w-4xl px-6 py-24">
             <h1 className="text-5xl md:text-8xl font-serif tracking-widest uppercase flex justify-center space-x-2 title-drift text-slate-900 drop-shadow-sm">
               <span>A</span><span>D</span><span>R</span><span>I</span><span>F</span><span>T</span>
@@ -225,7 +227,7 @@ export function CinematicExperience() {
         </section>
 
         {/* 2. TENSION */}
-        <section className="panel panel-tension w-full min-h-screen flex items-center shrink-0 px-6 md:px-24 py-24">
+        <section className="panel panel-tension w-full min-h-screen md:h-screen md:w-[120vw] flex items-center shrink-0 px-6 md:px-24 py-24">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24 w-full max-w-7xl mx-auto">
             <div className="md:w-1/2 tension-text">
               <p className="text-3xl md:text-5xl leading-tight font-serif text-slate-900 drop-shadow-sm">
@@ -244,7 +246,7 @@ export function CinematicExperience() {
         </section>
 
         {/* 3. THE BOOK */}
-        <section className="panel panel-book w-full min-h-screen flex items-center shrink-0 px-6 md:px-24 py-24">
+        <section className="panel panel-book w-full min-h-screen md:h-screen md:w-[130vw] flex items-center shrink-0 px-6 md:px-24 py-24">
            <div className="flex flex-col md:flex-row items-center gap-16 md:gap-32 w-full max-w-7xl mx-auto">
               <div className="md:w-[40%] relative aspect-[2/3] w-full max-w-md mx-auto book-cover shadow-2xl shadow-black/30 rounded-r-lg overflow-hidden border border-white/50">
                  <Image src="/images/book-front.jpeg" alt="Adrift Book Cover" fill className="object-cover" />
@@ -267,7 +269,7 @@ export function CinematicExperience() {
         </section>
 
         {/* 4. THE AUTHOR */}
-        <section className="panel panel-author w-full min-h-screen flex items-center shrink-0 px-6 md:px-24 py-24">
+        <section className="panel panel-author w-full min-h-screen md:h-screen md:w-[120vw] flex items-center shrink-0 px-6 md:px-24 py-24">
            <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24 w-full max-w-7xl mx-auto">
               <div className="md:w-[40%] relative aspect-[3/4] w-full max-w-md mx-auto author-img overflow-hidden rounded-xl shadow-2xl border border-white/50">
                  <Image src="/images/author.jpg" alt="Andrew J. Key Jr." fill className="object-cover" />
@@ -282,29 +284,10 @@ export function CinematicExperience() {
            </div>
         </section>
 
-        {/* 5. THE PHOTOGRAPHS */}
-        <section className="panel panel-photos w-full min-h-screen flex items-center shrink-0 px-6 md:px-24 py-24 relative">
-           <div className="flex flex-col md:flex-row gap-12 w-full max-w-7xl mx-auto items-center justify-center">
-              <div className="photo-frame relative w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-xl border border-white/50">
-                <Image src="/images/ocean-bg.jpg" alt="Ocean" fill className="object-cover" />
-                <p className="absolute bottom-6 left-6 text-sm tracking-widest text-white drop-shadow-md uppercase font-sans font-bold z-10">The Coast</p>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
-              <div className="photo-frame relative w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-white/50 md:-mt-16">
-                <Image src="/images/military-ph.jpg" alt="Military Service" fill className="object-cover" />
-                <p className="absolute bottom-6 right-6 text-sm tracking-widest text-white drop-shadow-md uppercase font-sans font-bold z-10">Service</p>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
-              <div className="photo-frame relative w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-xl border border-white/50 md:mt-16">
-                <Image src="/images/author.jpg" alt="Author reflection" fill className="object-cover" />
-                <p className="absolute bottom-6 left-6 text-sm tracking-widest text-white drop-shadow-md uppercase font-sans font-bold z-10">Reflection</p>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
-           </div>
-        </section>
+
 
         {/* 6. WHAT READERS SAID */}
-        <section className="panel panel-reviews w-full min-h-screen flex flex-col justify-center shrink-0 px-6 md:px-24 py-24 space-y-24 max-w-5xl mx-auto">
+        <section className="panel panel-reviews w-full min-h-screen md:h-screen md:w-[200vw] flex flex-col md:flex-row justify-center shrink-0 px-6 md:px-24 py-24 space-y-24 max-w-5xl mx-auto">
            <div className="review-block w-full text-center">
               <p className="text-3xl md:text-5xl font-serif leading-tight italic mb-8 text-slate-900">&quot;A powerful testimony of faith, resilience, and redemption.&quot;</p>
               <p className="text-sm tracking-[0.2em] text-slate-600 uppercase font-sans font-bold">— Bill Senter</p>
@@ -324,7 +307,7 @@ export function CinematicExperience() {
         </section>
 
         {/* 7. THE CLOSE */}
-        <section className="panel panel-close w-full min-h-screen flex items-center justify-center shrink-0 relative py-24">
+        <section className="panel panel-close w-full min-h-screen md:h-screen md:w-[100vw] flex items-center justify-center shrink-0 relative py-24">
            <div className="close-content flex flex-col items-center z-10 text-center space-y-12 bg-white/40 p-12 md:p-16 rounded-3xl backdrop-blur-lg border border-white/60 shadow-2xl max-w-2xl mx-4">
               <div className="relative w-64 aspect-[2/3] shadow-2xl shadow-black/40 rounded-r-lg overflow-hidden border border-white/60">
                  <Image src="/images/book-front.jpeg" alt="Adrift Book Cover" fill className="object-cover" />
@@ -345,6 +328,7 @@ export function CinematicExperience() {
            </div>
         </section>
 
+      </div>
       </div>
 
       {/* Trailer Overlay */}
