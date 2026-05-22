@@ -1,6 +1,7 @@
 'use client';
 
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
+import { Button } from '@/components/ui/Button';
 import { FadeUp } from '@/components/ui/FadeUp';
 
 import { StoreButton } from '@/components/ui/StoreButton';
@@ -51,13 +52,17 @@ export function FinalCallToActionSection() {
         </FadeUp>
 
         <FadeUp delay={0.4}>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="group flex items-center gap-3 px-8 py-3 mx-auto rounded-full bg-white/[0.04] border border-white/20 text-white hover:bg-site-accent hover:border-site-accent hover:text-black transition-all duration-300 font-sans tracking-wide mb-12"
-          >
-            <Play size={18} fill="currentColor" />
-            <span className="uppercase text-sm tracking-widest font-semibold">Watch the Trailer</span>
-          </button>
+          <Button asChild size="lg" className="w-full sm:w-auto px-10 mb-12">
+              <a href="#trailer" onClick={() => {
+                const trailerSection = document.getElementById('trailer');
+                if (trailerSection) {
+                  const event = new CustomEvent('playTrailer');
+                  window.dispatchEvent(event);
+                }
+              }}>
+                <span className="mr-2 text-lg leading-none">&#9654;</span> Watch Trailer
+              </a>
+            </Button>
         </FadeUp>
 
         {/* Store buttons with logos — centre-aligned */}

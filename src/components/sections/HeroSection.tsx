@@ -63,7 +63,13 @@ export function HeroSection() {
         <FadeUp delay={1.1}>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-5 sm:space-y-0 sm:space-x-8">
             <Button asChild size="lg" className="w-full sm:w-auto px-10">
-              <a href="#trailer">
+              <a href="#trailer" onClick={() => {
+                const trailerSection = document.getElementById('trailer');
+                if (trailerSection) {
+                  const event = new CustomEvent('playTrailer');
+                  window.dispatchEvent(event);
+                }
+              }}>
                 <span className="mr-2 text-lg leading-none">&#9654;</span> Watch Trailer
               </a>
             </Button>
