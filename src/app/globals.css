@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-abyss: #07090f;
+  --color-abyss: #f0ede8;
   --color-navy: #0a0e1a;
   --color-ocean: #0d1f3c;
-  --color-mist: #f0ede8;
-  --color-fog: #8a9bb0;
-  --color-gold: #c9a84c;
+  --color-mist: #111827;
+  --color-fog: #374151;
+  --color-gold: #b4860b;
   --color-gold-dim: #8a6e30;
+
+  --color-site-bg: #f8f9fa;
+  --color-site-surface: #ffffff;
+  --color-site-accent: #c9a84c;
+  --color-site-text: #1a1a1a;
+  --color-site-secondary: #4a5568;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -19,18 +25,28 @@
   }
 }
 
-/* Base custom properties for dynamic access if needed */
 :root {
-  --abyss: #07090f;
+  --abyss: #f0ede8;
   --navy: #0a0e1a;
   --ocean: #0d1f3c;
-  --mist: #f0ede8;
-  --fog: #8a9bb0;
-  --gold: #c9a84c;
+  --mist: #111827;
+  --fog: #374151;
+  --gold: #b4860b;
   --gold-dim: #8a6e30;
 }
 
-/* Utility to ensure elements respect reduced motion */
+@utility focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-site-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg transition-all;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold to-gold-dim;
+}
+
+@utility glass-panel {
+  @apply bg-white/20 backdrop-blur-xl border border-white/40 shadow-lg;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
