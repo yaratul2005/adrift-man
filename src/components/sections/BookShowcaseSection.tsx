@@ -11,17 +11,17 @@ const BN_URL = 'https://www.barnesandnoble.com/w/adrift-jr-andrew-j-key/11449744
 export function BookShowcaseSection() {
   return (
     <SectionWrapper id="book" padding="xl" className="bg-site-surface border-y border-white/[0.05] relative overflow-hidden">
-      
+
       {/* Subtle ambient glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-site-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
-          
+
           {/* Book Cover with Glow */}
           <div className="w-full md:w-1/2 flex justify-center relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[90%] bg-site-accent/20 blur-3xl rounded-[2rem] pointer-events-none" />
-            
+
             <FadeUp delay={0.2} className="w-full max-w-[320px] lg:max-w-[400px]">
               <div className="relative aspect-[2/3] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-md overflow-hidden group border border-white/10">
                 <Image
@@ -52,7 +52,7 @@ export function BookShowcaseSection() {
                 How God&apos;s Agents Helped Me Transform My Life
               </p>
             </FadeUp>
-            
+
             <FadeUp delay={0.5}>
               <p className="font-sans text-lg text-white/80 leading-relaxed mb-10 tracking-wide font-light max-w-lg mx-auto md:mx-0">
                 A deeply personal memoir of transformation — revealing how moments of crisis, chance encounters, and unseen guidance shaped one man&apos;s life against all odds.

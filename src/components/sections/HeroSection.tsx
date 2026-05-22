@@ -43,13 +43,13 @@ export function HeroSection() {
       <OceanMistParticles />
 
       {/* Interactive Mouse Parallax Container */}
-      <div 
+      <div
         className="relative z-10 mx-auto max-w-5xl px-4 text-center mt-16 transition-transform duration-1000 ease-out"
         style={{ transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)` }}
       >
         <FadeUp delay={0.3}>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wide leading-[1.1] mb-6 drop-shadow-2xl">
-            <span className="text-white/90">There were moments&hellip;</span> <br className="hidden md:block" /> 
+            <span className="text-white/90">There were moments&hellip;</span> <br className="hidden md:block" />
             <span className="text-gradient">I should not have survived.</span>
           </h1>
         </FadeUp>

@@ -30,7 +30,7 @@ export default function AuthorPage() {
 
           <FadeUp delay={0.45}>
             <p className="relative z-10 font-sans text-lg text-white/70 font-light leading-relaxed max-w-md mb-8">
-              Retired U.S. Coast Guard Lieutenant-Commander. Husband. Father. Author. 
+              Retired U.S. Coast Guard Lieutenant-Commander. Husband. Father. Author.
               A life shaped by duty, loss, faith — and the unseen forces that changed everything.
             </p>
           </FadeUp>

@@ -24,7 +24,7 @@ export function OceanMistParticles() {
       opacity: number;
       pulseRate: number;
       pulseAngle: number;
-      
+
       constructor() {
         this.x = Math.random() * w;
         this.y = Math.random() * h;
@@ -36,30 +36,30 @@ export function OceanMistParticles() {
         this.pulseRate = Math.random() * 0.02 + 0.01;
         this.pulseAngle = Math.random() * Math.PI * 2;
       }
-      
+
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
         this.pulseAngle += this.pulseRate;
-        
+
         // Wrap around screen
         if (this.y < 0) this.y = h;
         if (this.x < 0) this.x = w;
         if (this.x > w) this.x = 0;
       }
-      
+
       draw() {
         if (!ctx) return;
         // Dynamic opacity pulsing
         const currentOpacity = this.opacity + Math.sin(this.pulseAngle) * 0.2;
         const safeOpacity = Math.max(0, Math.min(1, currentOpacity));
-        
+
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         // Golden/Amber tint for particles matching the theme
-        ctx.fillStyle = `rgba(226, 194, 117, ${safeOpacity * 0.8})`; 
+        ctx.fillStyle = `rgba(226, 194, 117, ${safeOpacity * 0.8})`;
         ctx.fill();
-        
+
         // Add subtle glow
         ctx.shadowBlur = 15;
         ctx.shadowColor = 'rgba(226, 194, 117, 0.5)';
@@ -78,7 +78,7 @@ export function OceanMistParticles() {
     function animate() {
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, w, h);
-      
+
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
         particlesArray[i].draw();
