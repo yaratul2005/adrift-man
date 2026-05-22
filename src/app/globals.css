@@ -21,7 +21,8 @@
 
 @layer base {
   body {
-    @apply bg-abyss text-mist font-serif antialiased overflow-x-hidden;
+    @apply text-mist font-serif antialiased overflow-x-hidden;
+    background: transparent !important;
   }
 }
 
