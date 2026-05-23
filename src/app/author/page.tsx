@@ -6,77 +6,105 @@ export default function AuthorPage() {
   return (
     <SectionWrapper padding="none" className="bg-site-bg min-h-screen">
 
-      {/* ─── HERO: Split panel — text left, full portrait right ─── */}
-      <div className="relative w-full min-h-screen flex flex-row overflow-hidden">
+      {/* ─── HERO: Creative Floating Design ─── */}
+      <div className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 px-4">
 
-        {/* Left — title + intro */}
-        <div className="relative z-10 flex flex-col justify-center w-1/2 px-4 sm:px-8 md:px-16 lg:px-20 py-16 lg:py-24">
+        {/* Background ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-3xl max-h-[800px] bg-site-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* Ambient glow */}
-          <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-site-accent/5 rounded-full blur-[100px] pointer-events-none" />
+        {/* Global Keyframes for floating animation (injected into a style tag) */}
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+          }
+          @keyframes floatFast {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(-1deg); }
+          }
+          @keyframes floatMedium {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+          }
+          .animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+          .animate-float-fast { animation: floatFast 4s ease-in-out infinite; }
+          .animate-float-medium { animation: floatMedium 5s ease-in-out infinite; }
+        `}} />
 
-          <FadeUp delay={0.15}>
-            <p className="font-sans text-[11px] tracking-[0.45em] text-site-accent/70 uppercase mb-5 relative z-10">
-              About the Author
-            </p>
-          </FadeUp>
+        {/* Central Image Container */}
+        <div className="relative w-full max-w-lg aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group mb-16">
+          <Image
+            src="/images/author.jpg"
+            alt="Andrew J. Key Jr. — Official U.S. Coast Guard Portrait"
+            fill
+            priority
+            className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
 
-          <FadeUp delay={0.3}>
-            <h1 className="relative z-10 font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-wide leading-[1.05] mb-6 drop-shadow-xl">
-              <span className="text-white">Andrew</span><br />
-              <span className="text-gradient">J. Key Jr.</span>
-            </h1>
-          </FadeUp>
+          {/* Gradient Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#05070B] via-[#05070B]/40 to-transparent opacity-90 transition-opacity duration-700 group-hover:opacity-100" />
 
-          <FadeUp delay={0.45}>
-            <p className="relative z-10 font-sans text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed max-w-md mb-8">
-              Retired U.S. Coast Guard Lieutenant-Commander. Husband. Father. Author.
-              A life shaped by duty, loss, faith — and the unseen forces that changed everything.
-            </p>
-          </FadeUp>
-
-          <FadeUp delay={0.6}>
-            <div className="relative z-10 flex flex-col gap-4 max-w-[200px]">
-              {[
-                { label: 'Years of Service', value: '27+' },
-                { label: 'Final Rank', value: 'Lt. Commander' },
-                { label: 'Enlisted', value: '1957' },
-              ].map((stat) => (
-                <div key={stat.label} className="flex flex-col px-3 sm:px-5 py-2 sm:py-3 rounded-xl bg-white/[0.03] border border-white/[0.07]">
-                  <span className="font-serif text-lg sm:text-xl text-site-accent font-semibold">{stat.value}</span>
-                  <span className="font-sans text-[9px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.2em] text-white/45 uppercase mt-0.5">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
-
-          {/* Bottom decorative line */}
-          <div className="relative z-10 mt-12 h-px w-24 bg-gradient-to-r from-site-accent/50 to-transparent" />
-        </div>
-
-        {/* Right — full portrait image */}
-        <div className="relative w-1/2 h-auto min-h-screen flex-shrink-0 overflow-hidden">
-
-          {/* The portrait — object-contain so NO cropping, centred */}
-          <div className="absolute inset-0 bg-[#08090d]">
-            <Image
-              src="/images/author.jpg"
-              alt="Andrew J. Key Jr. — Official U.S. Coast Guard Portrait"
-              fill
-              priority
-              className="object-contain object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+          {/* Overlay Title */}
+          <div className="absolute bottom-0 inset-x-0 p-8 md:p-12 flex flex-col items-center justify-end text-center translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+            <FadeUp delay={0.2}>
+              <p className="font-sans text-[10px] md:text-xs tracking-[0.45em] text-site-accent uppercase mb-4 drop-shadow-md">
+                About the Author
+              </p>
+            </FadeUp>
+            <FadeUp delay={0.4}>
+              <h1 className="font-serif text-4xl md:text-6xl tracking-wide leading-[1.1] drop-shadow-2xl">
+                <span className="text-white">Andrew</span><br />
+                <span className="text-gradient">J. Key Jr.</span>
+              </h1>
+            </FadeUp>
           </div>
 
-          {/* Gradient blends into dark bg on left edge so split is seamless */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-site-bg to-transparent pointer-events-none" />
-                    {/* Subtle gold accent glow behind the portrait */}
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-site-accent/8 rounded-full blur-[80px] pointer-events-none" />
+          {/* Floating Stat Tags */}
+
+          {/* Top Right - Years of Service */}
+          <div className="absolute -top-4 -right-4 md:top-8 md:-right-12 z-20 animate-float-slow transition-transform duration-300 hover:scale-110">
+            <FadeUp delay={0.6}>
+              <div className="flex flex-col items-center px-4 md:px-6 py-2 md:py-3 rounded-xl bg-[#05070B]/70 backdrop-blur-md border border-white/10 shadow-xl">
+                <span className="font-serif text-xl md:text-2xl text-site-accent font-semibold drop-shadow-md">27+</span>
+                <span className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] text-white/70 uppercase mt-1">Years of Service</span>
+              </div>
+            </FadeUp>
+          </div>
+
+          {/* Middle Left - Final Rank */}
+          <div className="absolute top-1/2 -left-6 md:top-1/3 md:-left-16 -translate-y-1/2 z-20 animate-float-medium transition-transform duration-300 hover:scale-110" style={{ animationDelay: '1s' }}>
+            <FadeUp delay={0.7}>
+              <div className="flex flex-col items-center px-4 md:px-6 py-2 md:py-3 rounded-xl bg-[#05070B]/70 backdrop-blur-md border border-white/10 shadow-xl">
+                <span className="font-serif text-lg md:text-xl text-site-accent font-semibold drop-shadow-md text-center">Lt. Commander</span>
+                <span className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] text-white/70 uppercase mt-1">Final Rank</span>
+              </div>
+            </FadeUp>
+          </div>
+
+          {/* Bottom Right - Enlisted */}
+          <div className="absolute bottom-32 -right-4 md:bottom-24 md:-right-8 z-20 animate-float-fast transition-transform duration-300 hover:scale-110" style={{ animationDelay: '2s' }}>
+            <FadeUp delay={0.8}>
+              <div className="flex flex-col items-center px-4 md:px-6 py-2 md:py-3 rounded-xl bg-[#05070B]/70 backdrop-blur-md border border-white/10 shadow-xl">
+                <span className="font-serif text-xl md:text-2xl text-site-accent font-semibold drop-shadow-md">1957</span>
+                <span className="font-sans text-[8px] md:text-[10px] tracking-[0.2em] text-white/70 uppercase mt-1">Enlisted</span>
+              </div>
+            </FadeUp>
+          </div>
         </div>
 
-        {/* Full-width bottom fade so hero transitions cleanly into content */}
-        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-site-bg to-transparent pointer-events-none z-20" />
+        {/* Description Below Image */}
+        <div className="relative z-10 max-w-2xl text-center px-4">
+          <FadeUp delay={1.0}>
+            <p className="font-sans text-base md:text-lg lg:text-xl text-white/80 font-light leading-relaxed">
+              Retired U.S. Coast Guard Lieutenant-Commander. Husband. Father. Author.
+              <br className="hidden md:block" />
+              <span className="text-site-accent/90 italic"> A life shaped by duty, loss, faith — and the unseen forces that changed everything.</span>
+            </p>
+          </FadeUp>
+          {/* Bottom decorative line */}
+          <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-site-accent/50 to-transparent" />
+        </div>
       </div>
 
       {/* ─── CONTENT SECTIONS ─── */}
