@@ -7,10 +7,10 @@ export default function AuthorPage() {
     <SectionWrapper padding="none" className="bg-site-bg min-h-screen">
 
       {/* ─── HERO: Split panel — text left, full portrait right ─── */}
-      <div className="relative w-full min-h-screen flex flex-col lg:flex-row overflow-hidden">
+      <div className="relative w-full min-h-screen flex flex-row overflow-hidden">
 
         {/* Left — title + intro */}
-        <div className="relative z-10 flex flex-col justify-end lg:justify-center w-full lg:w-1/2 px-8 md:px-16 lg:px-20 pt-40 pb-16 lg:pt-32 lg:pb-24">
+        <div className="relative z-10 flex flex-col justify-center w-1/2 px-4 sm:px-8 md:px-16 lg:px-20 py-16 lg:py-24">
 
           {/* Ambient glow */}
           <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-site-accent/5 rounded-full blur-[100px] pointer-events-none" />
@@ -22,29 +22,29 @@ export default function AuthorPage() {
           </FadeUp>
 
           <FadeUp delay={0.3}>
-            <h1 className="relative z-10 font-serif text-5xl md:text-6xl lg:text-7xl tracking-wide leading-[1.05] mb-6 drop-shadow-xl">
+            <h1 className="relative z-10 font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-wide leading-[1.05] mb-6 drop-shadow-xl">
               <span className="text-white">Andrew</span><br />
               <span className="text-gradient">J. Key Jr.</span>
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.45}>
-            <p className="relative z-10 font-sans text-lg text-white/70 font-light leading-relaxed max-w-md mb-8">
+            <p className="relative z-10 font-sans text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed max-w-md mb-8">
               Retired U.S. Coast Guard Lieutenant-Commander. Husband. Father. Author.
               A life shaped by duty, loss, faith — and the unseen forces that changed everything.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.6}>
-            <div className="relative z-10 flex flex-wrap gap-4">
+            <div className="relative z-10 flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4">
               {[
                 { label: 'Years of Service', value: '27+' },
                 { label: 'Final Rank', value: 'Lt. Commander' },
                 { label: 'Enlisted', value: '1957' },
               ].map((stat) => (
-                <div key={stat.label} className="flex flex-col px-5 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07]">
-                  <span className="font-serif text-xl text-site-accent font-semibold">{stat.value}</span>
-                  <span className="font-sans text-[11px] tracking-[0.2em] text-white/45 uppercase mt-0.5">{stat.label}</span>
+                <div key={stat.label} className="flex flex-col px-3 sm:px-5 py-2 sm:py-3 rounded-xl bg-white/[0.03] border border-white/[0.07]">
+                  <span className="font-serif text-lg sm:text-xl text-site-accent font-semibold">{stat.value}</span>
+                  <span className="font-sans text-[9px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.2em] text-white/45 uppercase mt-0.5">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -55,7 +55,7 @@ export default function AuthorPage() {
         </div>
 
         {/* Right — full portrait image */}
-        <div className="relative w-full lg:w-1/2 h-[55vh] lg:h-auto lg:min-h-screen flex-shrink-0 overflow-hidden">
+        <div className="relative w-1/2 h-auto min-h-screen flex-shrink-0 overflow-hidden">
 
           {/* The portrait — object-contain so NO cropping, centred */}
           <div className="absolute inset-0 bg-[#08090d]">
@@ -71,10 +71,7 @@ export default function AuthorPage() {
 
           {/* Gradient blends into dark bg on left edge so split is seamless */}
           <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-site-bg to-transparent pointer-events-none" />
-          {/* Bottom fade for mobile */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-site-bg to-transparent pointer-events-none lg:hidden" />
-
-          {/* Subtle gold accent glow behind the portrait */}
+                    {/* Subtle gold accent glow behind the portrait */}
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-site-accent/8 rounded-full blur-[80px] pointer-events-none" />
         </div>
 
