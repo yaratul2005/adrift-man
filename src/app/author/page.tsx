@@ -36,7 +36,7 @@ export default function AuthorPage() {
           </FadeUp>
 
           <FadeUp delay={0.6}>
-            <div className="relative z-10 flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4">
+            <div className="relative z-10 flex flex-col gap-4 max-w-[200px]">
               {[
                 { label: 'Years of Service', value: '27+' },
                 { label: 'Final Rank', value: 'Lt. Commander' },
