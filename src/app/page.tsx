@@ -1,3 +1,4 @@
+import { ScrollPlane } from "@/components/ui/ScrollPlane";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MainTrailerSection } from "@/components/sections/MainTrailerSection";
 import { StoryHookSection } from "@/components/sections/StoryHookSection";
@@ -10,6 +11,7 @@ import { FinalCallToActionSection } from "@/components/sections/FinalCallToActio
 export default function Home() {
   return (
     <>
+      <ScrollPlane />
       <HeroSection />
       <MainTrailerSection />
       <StoryHookSection />
