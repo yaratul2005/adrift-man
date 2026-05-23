@@ -56,7 +56,7 @@ export default function AuthorPage() {
            <div className="absolute inset-0 bg-gradient-to-r from-[#05070B] via-[#05070B]/80 to-transparent z-10 pointer-events-none" />
            <div className="relative w-full h-full -z-10">
              <Image
-                src="/images/author.jpg"
+                src="/images/lcdr-a-key.jpg"
                 alt="Andrew J. Key Jr. — Official U.S. Coast Guard Portrait"
                 fill
                 className="object-cover object-center"
