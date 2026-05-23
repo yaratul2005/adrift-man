@@ -53,7 +53,7 @@ export default function AuthorPage() {
 
         {/* Right Side: Image with Gradient Fade */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] md:w-1/2 z-10">
-           <div className="absolute inset-0 bg-gradient-to-r from-[#05070B] via-[#05070B]/80 to-transparent z-10 pointer-events-none" />
+           <div className="absolute inset-0 bg-gradient-to-r from-[#05070B] via-[#05070B]/20 to-transparent z-10 pointer-events-none" />
            <div className="relative w-full h-full -z-10">
              <Image
                 src="/images/lcdr-a-key.jpg"
