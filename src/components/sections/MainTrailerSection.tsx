@@ -31,7 +31,7 @@ export function MainTrailerSection({
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-site-accent/5 blur-[150px] rounded-[100%] pointer-events-none" />
 
       <FadeUp>
-        <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/80 shadow-[0_20px_60px_-15px_rgba(226,194,117,0.15)] aspect-video border border-white/[0.08] ring-1 ring-site-accent/10">
+        <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl bg-black/80 shadow-[0_20px_60px_-15px_rgba(226,194,117,0.15)] border border-white/[0.08] ring-1 ring-site-accent/10" style={{ paddingTop: "56.25%" }}>
           {!isPlaying ? (
             <div
               className="absolute inset-0 cursor-pointer group w-full h-full flex flex-col items-center justify-center"
@@ -66,12 +66,10 @@ export function MainTrailerSection({
             <div className="absolute inset-0 w-full h-full bg-black">
               <iframe
                 src={videoUrl}
-                width="100%"
-                height="100%"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
                 allowFullScreen
                 referrerPolicy="no-referrer"
-                className="w-full h-full border-0 absolute top-0 left-0"
+                className="absolute top-0 left-0 w-full h-full border-0"
                 title="Main Trailer"
               ></iframe>
             </div>
