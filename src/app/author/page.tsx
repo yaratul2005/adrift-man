@@ -32,8 +32,9 @@ export default function AuthorPage() {
         `}} />
 
         {/* Central Image Container */}
-        <div className="relative w-full max-w-lg aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group mb-16">
-          <Image
+        <div className="relative w-full max-w-lg aspect-[3/4] md:aspect-[4/5] rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/10 group mb-16 z-20">
+          <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            <Image
             src="/images/author.jpg"
             alt="Andrew J. Key Jr. — Official U.S. Coast Guard Portrait"
             fill
@@ -58,6 +59,7 @@ export default function AuthorPage() {
                 <span className="text-gradient">J. Key Jr.</span>
               </h1>
             </FadeUp>
+          </div>
           </div>
 
           {/* Floating Stat Tags */}
