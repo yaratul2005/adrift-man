@@ -8,22 +8,22 @@ import { FadeUp } from '@/components/ui/FadeUp';
 
 const videos = [
   {
-    url: 'https://drive.google.com/file/d/1vDFU_0GQ5ibgNLKptsGknwZgIvO57IFw/preview',
+    id: 'PaUIn7NOsMM',
     title: 'Podcast Interview',
     description: 'A deep dive into the author\'s life story and the inspiration behind Adrift.'
   },
   {
-    url: 'https://drive.google.com/file/d/1G77enYcfJtPfrOJtQL6zn_PWhSD5zJH2/preview',
+    id: '0HyTE-m5mro',
     title: 'Adrift Author\'s Life Journey',
     description: 'A personal look into the author\'s incredible life journey.'
   },
   {
-    url: 'https://drive.google.com/file/d/1R36J148eiLVdiywC_Ftbu8S2W1_wVdvh/preview',
+    id: 'PKRKEoYxtmA',
     title: 'Book Signing Session',
     description: 'Highlights from the official book signing event.'
   },
   {
-    url: 'https://drive.google.com/file/d/1ftF6hNt0zYrHTkM74P99lDd8DYpz2_Lc/preview',
+    id: '6ejEsCQ1gYI',
     title: 'Book Introduction',
     description: 'An overview of the themes and messages found in Adrift.'
   },
@@ -31,6 +31,10 @@ const videos = [
 
 export default function VideoPage() {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+
+  // Common YouTube embed parameters for a cleaner UI
+  const youtubeParams = '?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3';
+
   return (
     <SectionWrapper padding="xl" className="mt-20 min-h-screen">
       <div className="mx-auto max-w-4xl text-center mb-16">
@@ -54,14 +58,10 @@ export default function VideoPage() {
               <div className="relative w-full aspect-video bg-black/50 overflow-hidden">
                 {playingIndex === index ? (
                   <iframe
-                    src={video.url.includes('?') ? `${video.url}&autoplay=1` : `${video.url}?autoplay=1`}
-                    width="100%"
-                    height="100%"
-                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    src={`https://www.youtube.com/embed/${video.id}${youtubeParams}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full border-0 absolute top-0 left-0"
-                    style={{ border: 'none' }}
+                    className="absolute top-0 left-0 w-full h-full border-0"
                     title={video.title}
                   ></iframe>
                 ) : (
@@ -77,20 +77,20 @@ export default function VideoPage() {
                       }
                     }}
                   >
-                    {/* Thumbnail Image */}
+                    {/* YouTube Thumbnail Image */}
                     <Image
-                      src="/images/book-cover.jpg"
+                      src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
                       alt={video.title}
                       fill
                       className="object-cover opacity-50 transition-opacity duration-500 group-hover:opacity-40"
+                      unoptimized // YouTube images are already optimized, and next/image might fail on external domains without config
                     />
 
                     {/* Play Button Overlay */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-500">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_30px_rgba(226,194,117,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent mb-4">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_30px_rgba(226,194,117,0.3)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent">
                         <Play size={24} className="ml-1" fill="currentColor" />
                       </div>
-                      <span className="font-sans text-xs text-site-accent tracking-[0.2em] uppercase drop-shadow font-semibold">Play Video</span>
                     </div>
                   </div>
                 )}
