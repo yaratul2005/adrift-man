@@ -58,10 +58,10 @@ export function MainTrailerSection({
 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-500">
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent mb-6">
+                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-site-accent/90 text-site-bg shadow-[0_0_40px_rgba(226,194,117,0.4)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-site-accent">
                     <Play size={40} className="ml-2" fill="currentColor" />
                   </div>
-                  <span className="font-sans text-sm md:text-base text-site-accent tracking-[0.3em] uppercase drop-shadow font-semibold">Watch the Trailer</span>
+
                 </div>
               </div>
             ) : (
