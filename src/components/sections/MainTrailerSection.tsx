@@ -11,7 +11,7 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  videoUrl = 'https://drive.google.com/file/d/1oduQou4JRDfq35Rj3TeXwiHk5vk1Jb2d/preview',
+  videoUrl = 'https://www.youtube.com/embed/McRS8802Kh0?autoplay=1&rel=0',
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -32,11 +32,8 @@ export function MainTrailerSection({
       <FadeUp>
         <div className="relative mx-auto w-full max-w-5xl rounded-2xl bg-black/80 shadow-[0_20px_60px_-15px_rgba(226,194,117,0.15)] border border-white/[0.08] ring-1 ring-site-accent/10 overflow-hidden">
 
-          {/*
-            Wrapper for aspect ratio.
-            On mobile, we use a trick to make the iframe larger and scale it down to prevent the Google Drive player from cropping.
-          */}
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+          {/* Wrapper for 16:9 aspect ratio */}
+          <div className="relative w-full aspect-video">
             {!isPlaying ? (
               <div
                 className="absolute inset-0 cursor-pointer group w-full h-full flex flex-col items-center justify-center z-10"
@@ -69,19 +66,11 @@ export function MainTrailerSection({
               </div>
             ) : (
               <div className="absolute inset-0 w-full h-full bg-black overflow-hidden rounded-2xl">
-                {/*
-                  The hack: On mobile (< 768px), make the iframe 200% size and scale it down by 0.5.
-                  This tricks the Google Drive player into rendering a wider layout, preventing center-cropping.
-                  On desktop (md:), it reverts to standard 100% sizing.
-                */}
                 <iframe
                   src={videoUrl}
-                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  referrerPolicy="no-referrer"
-                  className="absolute border-0
-                             w-[200%] h-[200%] top-[-50%] left-[-50%] scale-[0.5]
-                             md:w-full md:h-full md:top-0 md:left-0 md:scale-100"
+                  className="absolute top-0 left-0 w-full h-full border-0"
                   title="Main Trailer"
                 ></iframe>
               </div>
