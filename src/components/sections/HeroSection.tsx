@@ -26,8 +26,8 @@ export function HeroSection() {
       {/* Static Lighthouse Background */}
       <div className="absolute inset-0 z-0 bg-site-bg overflow-hidden">
         <Image
-          src="/images/lighthouse.png"
-          alt="Lighthouse Background"
+          src="/images/bgb.jpeg"
+          alt="Hero Background"
           fill
           priority
           className="object-cover object-center"
