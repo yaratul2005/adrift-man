@@ -11,7 +11,7 @@ interface MainTrailerSectionProps {
 }
 
 export function MainTrailerSection({
-  videoUrl = 'https://www.youtube.com/embed/McRS8802Kh0?autoplay=1&rel=0',
+  videoUrl = 'https://www.youtube.com/embed/McRS8802Kh0?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3',
 }: MainTrailerSectionProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
